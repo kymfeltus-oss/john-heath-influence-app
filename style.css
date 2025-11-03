@@ -1,114 +1,123 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
   --navy: #0e1a2b;
   --gold: #d4af37;
-  --royal: linear-gradient(90deg, #1e3a8a, #3b82f6);
-  --gray: #555;
-  --light: #fafafa;
+  --royal: #1e3a8a;
+  --light: #f8fafc;
+  --text: #111;
 }
 
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: var(--light);
-  color: var(--navy);
+  color: var(--text);
   text-align: center;
+  overflow-x: hidden;
 }
 
-.mobile-app {
+/* Layout */
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  overflow: hidden;
+  padding: 1rem;
 }
 
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2rem 1rem;
-}
-
-/* John’s portrait */
+/* Portrait */
 .portrait-wrap {
   display: flex;
   justify-content: center;
-}
-.portrait {
-  width: 70%;
-  max-width: 320px;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Signature animation */
-.signature {
-  width: 80%;
-  max-width: 400px;
   margin-top: 1rem;
-  animation: draw 3s ease-in-out forwards;
-}
-@keyframes draw {
-  from {
-    stroke-dasharray: 1500;
-    stroke-dashoffset: 1500;
-  }
-  to {
-    stroke-dasharray: 1500;
-    stroke-dashoffset: 0;
-  }
 }
 
+.portrait {
+  width: 60%;
+  max-width: 320px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.portrait:hover {
+  transform: scale(1.02);
+}
+
+/* Signature logo */
+.logo-container {
+  margin-top: -1rem;
+}
+
+.logo {
+  width: 85%;
+  max-width: 360px;
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+}
+
+/* Tagline */
 .tagline {
-  font-size: 1rem;
-  color: var(--gray);
-  letter-spacing: 1px;
-  margin: 0.5rem 0 1.5rem;
+  font-size: 1.1rem;
+  color: #555;
+  margin: 1.8rem auto;
+  max-width: 330px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.tagline span {
+  font-weight: 600;
+  color: var(--gold);
+  background: linear-gradient(90deg, #d4af37, #f1d66d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Buttons */
-.cta {
+.cta-buttons {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.9rem;
   width: 80%;
   max-width: 280px;
+  margin: 1rem auto 0;
 }
 
 .btn {
   text-decoration: none;
   font-weight: 600;
   padding: 0.9rem;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   font-size: 1rem;
 }
 
-.btn.royal {
+.btn.primary {
   background: var(--royal);
   color: white;
   box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
 }
 
-.btn.royal:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+.btn.primary:hover {
+  background: #264ac5;
+  transform: translateY(-2px);
 }
 
-.btn.outline {
-  border: 2px solid var(--navy);
-  color: var(--navy);
+.btn.secondary {
+  border: 2px solid var(--royal);
+  color: var(--royal);
   background: transparent;
 }
 
-.btn.outline:hover {
-  background: var(--navy);
+.btn.secondary:hover {
+  background: var(--royal);
   color: white;
 }
 
@@ -120,18 +129,24 @@ footer {
   text-align: center;
   padding: 1rem;
   border-top: 3px solid var(--gold);
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
-/* Mobile Responsive */
+/* Mobile */
 @media (max-width: 480px) {
   .portrait {
-    width: 80%;
+    width: 70%;
   }
-  .signature {
+
+  .logo {
     width: 90%;
   }
+
   .tagline {
-    font-size: 0.95rem;
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
