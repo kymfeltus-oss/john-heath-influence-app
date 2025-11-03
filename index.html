@@ -1,152 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Heath Influence App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mobile-layout">
+      <div class="top-section">
+        <img src="john-heath.jpg" alt="Pastor John Heath" class="portrait" />
+        <img src="logo.png" alt="John Heath Logo" class="signature-logo" />
+      </div>
 
-:root {
-  --navy: #0e1a2b;
-  --gold: #d4af37;
-  --royal: #1e3a8a;
-  --light: #fafafa;
-  --gray: #444;
-}
+      <div class="bottom-section">
+        <p class="tagline">
+          Empowering <span>leaders</span> to speak, lead, and influence with
+          <span>vision.</span>
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn primary">Login</a>
+          <a href="#" class="btn secondary">Create Account</a>
+        </div>
+      </div>
+    </div>
 
-body {
-  margin: 0;
-  background: var(--light);
-  font-family: "Poppins", sans-serif;
-  color: var(--navy);
-  overflow-x: hidden;
-}
-
-/* --- Main mobile layout --- */
-.mobile-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 1rem;
-  justify-content: center;
-}
-
-/* --- Top section: portrait & logo side by side --- */
-.top-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-/* --- Pastor Heath photo --- */
-.portrait {
-  width: 45%;
-  max-width: 180px;
-  height: auto;
-  border: none;
-  border-radius: 0;
-  object-fit: contain;
-}
-
-/* --- Logo --- */
-.signature-logo {
-  width: 48%;
-  max-width: 220px;
-  animation: fadeIn 1.5s ease-in;
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --- Tagline --- */
-.tagline {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--gray);
-  line-height: 1.6;
-  max-width: 320px;
-  margin: 1.5rem auto 1rem;
-}
-
-.tagline span {
-  color: var(--gold);
-  font-weight: 600;
-}
-
-/* --- Buttons --- */
-.cta-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  width: 90%;
-  max-width: 280px;
-  margin: 1rem auto 2rem;
-}
-
-.btn {
-  text-decoration: none;
-  padding: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.btn.primary {
-  background: var(--royal);
-  color: white;
-  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
-}
-
-.btn.primary:hover {
-  background: #264ac5;
-}
-
-.btn.secondary {
-  border: 2px solid var(--royal);
-  color: var(--royal);
-  background: transparent;
-}
-
-.btn.secondary:hover {
-  background: var(--royal);
-  color: white;
-}
-
-/* --- Footer --- */
-footer {
-  background: var(--navy);
-  color: white;
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 1rem;
-  border-top: 3px solid var(--gold);
-  margin-top: auto;
-}
-
-/* --- Mobile responsiveness --- */
-@media (max-width: 480px) {
-  .top-section {
-    gap: 0.8rem;
-  }
-
-  .portrait {
-    width: 48%;
-  }
-
-  .signature-logo {
-    width: 48%;
-  }
-
-  .tagline {
-    font-size: 0.95rem;
-  }
-}
+    <footer>
+      <p>© 2026 John Heath Influence. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
