@@ -5,95 +5,76 @@
   --gold: #d4af37;
   --royal: #1e3a8a;
   --light: #ffffff;
-  --gray: #555;
+  --gray: #444;
 }
 
-/* Base Layout */
+/* Base */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #ffffff 0%, #f9f6ed 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f9f7f0 100%);
   color: var(--navy);
   overflow: hidden;
-}
-
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  position: relative;
 }
 
-/* Hero section */
-.hero {
+/* Layout */
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
   padding: 1rem;
 }
 
-/* Image Pair (Pastor Heath + Logo) */
-.hero-images {
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  gap: -1.5rem;
-  width: 100%;
-  max-width: 400px;
+  margin-bottom: 1.5rem;
 }
 
 /* Pastor Heath */
 .portrait {
-  width: 48%;
+  width: 80%;
+  max-width: 400px;
   height: auto;
-  object-fit: contain;
   border: none;
   background: transparent;
   position: relative;
   z-index: 2;
-  transform: translateX(-3%);
+  transform: translateY(15%);
+  opacity: 0.95;
 }
 
 /* Logo */
 .logo {
-  width: 52%;
-  height: auto;
-  background: transparent;
-  filter: brightness(1.1);
-  position: relative;
-  z-index: 1;
-  transform: translateX(-5%);
-}
-
-/* Tagline */
-.tagline {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--gray);
-  line-height: 1.6;
-  max-width: 300px;
-  margin: 0.5rem auto 0;
-}
-
-.tagline span {
-  color: var(--gold);
-  font-weight: 600;
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  max-width: 340px;
+  z-index: 3;
+  transform: translateY(-10%);
 }
 
 /* Buttons */
 .cta-buttons {
+  position: relative;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
   width: 80%;
-  max-width: 260px;
-  margin-top: 0.5rem;
+  max-width: 280px;
+  margin-top: -3rem;
 }
 
 .btn {
@@ -126,6 +107,21 @@ body {
   color: white;
 }
 
+/* Tagline */
+.tagline {
+  font-size: 1rem;
+  color: var(--gray);
+  max-width: 340px;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.tagline span {
+  color: var(--gold);
+  font-weight: 600;
+}
+
 /* Footer */
 footer {
   background: var(--navy);
@@ -139,64 +135,64 @@ footer {
 /* Animations */
 .fade-in-left {
   opacity: 0;
-  transform: translateX(-30px);
-  animation: fadeInLeft 1.5s ease forwards;
+  transform: translateX(-40px);
+  animation: fadeInLeft 1.6s ease forwards;
 }
 
 .fade-in-right {
   opacity: 0;
-  transform: translateX(30px);
-  animation: fadeInRight 1.5s ease forwards;
+  transform: translateX(40px);
+  animation: fadeInRight 1.6s ease forwards;
 }
 
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 1.6s ease forwards;
+  animation: fadeInUp 1.8s ease forwards;
 }
 
 @keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Responsive Mobile */
+/* Mobile */
 @media (max-width: 480px) {
   .portrait {
-    width: 50%;
+    width: 95%;
+    transform: translateY(20%);
   }
+
   .logo {
-    width: 58%;
+    width: 90%;
+    top: 8%;
   }
+
   .btn {
     font-size: 0.85rem;
+  }
+
+  .cta-buttons {
+    margin-top: -2rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
   }
 }
