@@ -1,10 +1,9 @@
-/* --- Brand Colors --- */
 :root {
   --navy: #0e1a2b;
   --gold: #d4af37;
   --light-bg: #fafafa;
   --text: #111;
-  --gray: #777;
+  --gray: #666;
 }
 
 body {
@@ -16,11 +15,18 @@ body {
 
 header {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 0 1rem;
+  border-bottom: 3px solid var(--gold);
 }
 
 .logo {
-  width: 220px;
+  width: 300px;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.logo.interactive:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
 }
 
 .hero {
@@ -30,7 +36,6 @@ header {
   justify-content: center;
   padding: 3rem 1.5rem;
   background: linear-gradient(to bottom right, white, #f3f3f3);
-  border-top: 4px solid var(--gold);
 }
 
 .hero-content {
@@ -39,17 +44,11 @@ header {
   margin-right: 2rem;
 }
 
-.hero-content h1 {
-  color: var(--navy);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
 .tagline {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--gray);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .cta-buttons {
@@ -71,12 +70,13 @@ header {
 }
 
 .btn.primary:hover {
-  background: #152b4b;
+  background: #1b2f48;
 }
 
 .btn.secondary {
   border: 2px solid var(--navy);
   color: var(--navy);
+  background: transparent;
 }
 
 .btn.secondary:hover {
