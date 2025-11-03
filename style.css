@@ -9,72 +9,90 @@
   --gray: #444;
 }
 
-/* Base Setup */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(180deg, var(--light) 0%, var(--champagne) 100%);
   color: var(--navy);
   overflow: hidden;
+  text-align: center;
 }
 
-/* Layout */
-.app-screen {
+/* --- Container --- */
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 1rem;
-  text-align: center;
+  position: relative;
 }
 
-/* Hero Row: Pastor Heath + Logo */
-.hero-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+/* --- Hero Section --- */
+.hero {
+  position: relative;
   width: 100%;
   max-width: 430px;
-  position: relative;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Pastor Heath */
-.portrait {
-  width: 55%;
-  height: auto;
-  border: none;
-  background: transparent;
-  transform: translateY(10%);
-  opacity: 0.95;
-}
-
-/* Signature Logo */
-.signature {
-  width: 58%;
-  height: auto;
-  background: transparent;
-  margin-bottom: 10%;
-  filter: brightness(1.1);
-  transform: translateY(-5%);
-}
-
-/* Buttons */
-.cta {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* --- Pastor Heath Image --- */
+.portrait {
+  width: 85%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  border: none;
+  background: transparent;
+  transform: translateY(8%);
+  z-index: 2;
+  animation: fadeInLeft 1.5s ease forwards;
+}
+
+/* --- Signature Logo --- */
+.signature {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  width: 70%;
+  max-width: 300px;
+  z-index: 3;
+  background: transparent;
+  transform: translateY(-10%);
+  animation: fadeInDown 1.8s ease forwards;
+}
+
+/* --- Fade Overlay (behind buttons) --- */
+.fade-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(to top, var(--light) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 4;
+}
+
+/* --- Buttons --- */
+.cta-buttons {
+  position: absolute;
+  bottom: 8%;
   width: 80%;
-  max-width: 260px;
-  margin-top: 0.5rem;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  z-index: 5;
+  animation: fadeInUp 2s ease forwards;
 }
 
 .btn {
   text-decoration: none;
   font-weight: 600;
-  padding: 0.75rem;
+  padding: 0.7rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   font-size: 0.9rem;
@@ -101,14 +119,16 @@ body {
   color: white;
 }
 
-/* Tagline */
+/* --- Tagline --- */
 .tagline {
-  font-size: 1rem;
+  position: absolute;
+  bottom: 1%;
+  font-size: 0.9rem;
   color: var(--gray);
   max-width: 340px;
-  margin: 1rem auto 0;
   line-height: 1.5;
   font-weight: 400;
+  z-index: 6;
 }
 
 .tagline span {
@@ -116,7 +136,7 @@ body {
   font-weight: 600;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
   background: var(--navy);
   color: white;
@@ -126,27 +146,12 @@ footer {
   border-top: 2px solid var(--gold);
 }
 
-/* Animations */
-.fade-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  animation: fadeInLeft 1.8s ease forwards;
-}
-
-.fade-down {
-  opacity: 0;
-  transform: translateY(-30px);
-  animation: fadeInDown 1.8s ease forwards;
-}
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1.8s ease forwards;
-  animation-delay: 1s;
-}
-
+/* --- Animations --- */
 @keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
   to {
     opacity: 1;
     transform: translateX(0);
@@ -154,6 +159,10 @@ footer {
 }
 
 @keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -161,22 +170,31 @@ footer {
 }
 
 @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Mobile */
+/* --- Mobile Adjustments --- */
 @media (max-width: 480px) {
   .portrait {
-    width: 60%;
-    transform: translateY(15%);
+    width: 95%;
+    transform: translateY(10%);
   }
 
   .signature {
-    width: 70%;
-    margin-bottom: 8%;
+    width: 80%;
+    top: 6%;
+    right: 5%;
+  }
+
+  .cta-buttons {
+    bottom: 10%;
   }
 
   .btn {
@@ -185,6 +203,6 @@ footer {
   }
 
   .tagline {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 }
