@@ -5,7 +5,7 @@
   --gold: #d4af37;
   --royal: #1e3a8a;
   --light: #fafafa;
-  --gray: #444;
+  --gray: #555;
 }
 
 body {
@@ -16,74 +16,82 @@ body {
   overflow-x: hidden;
 }
 
-/* --- App Container --- */
-.app-layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-}
-
-/* --- Centered Main Content --- */
-.center-content {
+/* --- Main App Screen --- */
+.app-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
-  padding: 2rem 1rem;
+  min-height: 100vh;
+  text-align: center;
+  padding: 0 1rem;
 }
 
-/* --- Side-by-Side Hero Row --- */
+/* --- Row with Pastor Heath and Logo --- */
 .hero-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 2rem;
+  flex-wrap: nowrap;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 420px;
 }
 
-/* --- Pastor Heath --- */
+/* --- Pastor Heath Image --- */
 .portrait {
-  width: 45%;
-  max-width: 180px;
+  width: 55%;
   height: auto;
-  border: none;
-  border-radius: 0;
   object-fit: contain;
+  border: none;
+  background: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.4s ease;
 }
 
-/* --- Logo --- */
+.portrait:hover {
+  transform: scale(1.03);
+}
+
+/* --- Signature Logo --- */
 .signature-logo {
-  width: 48%;
-  max-width: 220px;
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
+  width: 45%;
+  max-width: 240px;
+  height: auto;
+  background: transparent;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.25));
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.signature-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
 }
 
 /* --- Buttons --- */
 .cta-buttons {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  width: 90%;
-  max-width: 280px;
+  gap: 0.6rem;
+  width: 80%;
+  max-width: 260px;
   margin: 0 auto;
 }
 
 .btn {
   text-decoration: none;
-  padding: 1rem;
   font-weight: 600;
+  padding: 0.75rem;
   border-radius: 8px;
   transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .btn.primary {
   background: var(--royal);
   color: white;
-  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
+  box-shadow: 0 3px 6px rgba(30, 58, 138, 0.25);
 }
 
 .btn.primary:hover {
@@ -107,30 +115,27 @@ footer {
   color: white;
   font-size: 0.8rem;
   text-align: center;
-  padding: 1rem;
-  border-top: 3px solid var(--gold);
+  padding: 0.8rem;
+  border-top: 2px solid var(--gold);
 }
 
-/* --- Mobile Adjustments --- */
+/* --- Mobile Optimization --- */
 @media (max-width: 480px) {
   .hero-row {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     gap: 1rem;
+    max-width: 350px;
   }
 
   .portrait {
-    width: 46%;
-    max-width: 160px;
+    width: 60%;
   }
 
   .signature-logo {
-    width: 46%;
-    max-width: 180px;
+    width: 50%;
   }
 
   .btn {
-    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.7rem;
   }
 }
