@@ -1,66 +1,100 @@
+/* --- Brand Colors --- */
+:root {
+  --navy: #0e1a2b;
+  --gold: #d4af37;
+  --light-bg: #fafafa;
+  --text: #111;
+  --gray: #777;
+}
+
 body {
-  font-family: "Poppins", sans-serif;
   margin: 0;
-  background: #f8fafc;
-  color: #0e1a2b;
+  font-family: "Poppins", sans-serif;
+  background: var(--light-bg);
+  color: var(--text);
 }
 
 header {
-  background: white;
   text-align: center;
-  padding: 1rem;
-  border-bottom: 2px solid #d4af37;
+  padding: 2rem 0;
+}
+
+.logo {
+  width: 220px;
 }
 
 .hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(180deg, #ffffff, #f0f0f0);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(to bottom right, white, #f3f3f3);
+  border-top: 4px solid var(--gold);
 }
 
-.hero h2 {
-  color: #0e1a2b;
+.hero-content {
+  max-width: 450px;
+  text-align: left;
+  margin-right: 2rem;
+}
+
+.hero-content h1 {
+  color: var(--navy);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
 }
 
 .btn {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.8rem 1.5rem;
   text-decoration: none;
-  border-radius: 5px;
+  padding: 0.8rem 1.8rem;
   font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .btn.primary {
-  background: #0e1a2b;
+  background: var(--navy);
   color: white;
+}
+
+.btn.primary:hover {
+  background: #152b4b;
 }
 
 .btn.secondary {
-  border: 2px solid #0e1a2b;
-  color: #0e1a2b;
+  border: 2px solid var(--navy);
+  color: var(--navy);
 }
 
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
+.btn.secondary:hover {
+  background: var(--navy);
+  color: white;
 }
 
-.card {
-  background: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  width: 300px;
+.hero-image img {
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 footer {
-  text-align: center;
-  background: #0e1a2b;
+  background: var(--navy);
   color: white;
-  padding: 1rem;
+  text-align: center;
+  padding: 1.2rem;
   font-size: 0.9rem;
+  margin-top: 3rem;
 }
