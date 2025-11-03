@@ -1,5 +1,5 @@
-// Adds a simple welcome interaction for the logo
-const logo = document.querySelector(".logo.interactive");
+// Smooth logo pulse and welcome message
+const logo = document.querySelector(".logo");
 
 if (logo) {
   logo.addEventListener("click", () => {
