@@ -4,64 +4,81 @@
   --navy: #0e1a2b;
   --gold: #d4af37;
   --royal: #1e3a8a;
-  --light: #fafafa;
+  --light: #ffffff;
   --gray: #555;
 }
 
+/* Base Layout */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to bottom right, #ffffff, #f8f3e6, #fdf6e2);
+  background: linear-gradient(180deg, #ffffff 0%, #f9f6ed 100%);
   color: var(--navy);
   overflow: hidden;
 }
 
-/* --- Fullscreen Layout --- */
-.splash-screen {
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Hero section */
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Image Pair (Pastor Heath + Logo) */
+.hero-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  text-align: center;
-  padding: 0 1rem;
+  gap: -1.5rem;
+  width: 100%;
+  max-width: 400px;
 }
 
-/* --- Logo Watermark --- */
-.background-logo {
-  position: absolute;
-  right: 5%;
-  top: 25%;
-  width: 80%;
-  opacity: 0.08;
-  z-index: 1;
-  transform: scale(1.4);
-  animation: fadeIn 2s ease-in;
-}
-
-/* --- Pastor Heath --- */
+/* Pastor Heath */
 .portrait {
-  position: relative;
-  width: 55%;
-  max-width: 250px;
-  z-index: 2;
+  width: 48%;
+  height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
-  animation: slideInLeft 1.2s ease-out;
+  border: none;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  transform: translateX(-3%);
 }
 
-/* --- Tagline --- */
-.tagline {
+/* Logo */
+.logo {
+  width: 52%;
+  height: auto;
+  background: transparent;
+  filter: brightness(1.1);
   position: relative;
-  z-index: 3;
+  z-index: 1;
+  transform: translateX(-5%);
+}
+
+/* Tagline */
+.tagline {
   font-size: 1rem;
   font-weight: 400;
   color: var(--gray);
-  margin: 1.2rem auto;
-  max-width: 320px;
   line-height: 1.6;
-  animation: fadeIn 2s ease 1.2s forwards;
+  max-width: 300px;
+  margin: 0.5rem auto 0;
 }
 
 .tagline span {
@@ -69,16 +86,14 @@ body {
   font-weight: 600;
 }
 
-/* --- Buttons --- */
+/* Buttons */
 .cta-buttons {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.7rem;
   width: 80%;
-  max-width: 250px;
-  margin: 1rem auto 0;
-  z-index: 3;
-  animation: fadeIn 2s ease 1.8s forwards;
+  max-width: 260px;
+  margin-top: 0.5rem;
 }
 
 .btn {
@@ -87,7 +102,7 @@ body {
   padding: 0.7rem;
   border-radius: 8px;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .btn.primary {
@@ -111,30 +126,39 @@ body {
   color: white;
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
   background: var(--navy);
   color: white;
   font-size: 0.8rem;
   text-align: center;
-  padding: 0.6rem;
+  padding: 0.8rem;
   border-top: 2px solid var(--gold);
 }
 
-/* --- Animations --- */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Animations */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInLeft 1.5s ease forwards;
 }
 
-@keyframes slideInLeft {
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInRight 1.5s ease forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.6s ease forwards;
+}
+
+@keyframes fadeInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-30px);
   }
   100% {
     opacity: 1;
@@ -142,24 +166,37 @@ footer {
   }
 }
 
-/* --- Mobile Layout --- */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Mobile */
 @media (max-width: 480px) {
-  .background-logo {
-    top: 35%;
-    right: 0;
-    width: 110%;
-    transform: scale(1.6);
-  }
-
   .portrait {
-    width: 60%;
+    width: 50%;
   }
-
-  .tagline {
-    font-size: 0.95rem;
+  .logo {
+    width: 58%;
   }
-
   .btn {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
