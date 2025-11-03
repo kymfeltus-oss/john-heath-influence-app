@@ -9,6 +9,7 @@
   --gray: #444;
 }
 
+/* Base Setup */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -18,7 +19,7 @@ body {
   text-align: center;
 }
 
-/* --- Container --- */
+/* Container */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -28,7 +29,7 @@ body {
   position: relative;
 }
 
-/* --- Hero Section --- */
+/* Hero Section */
 .hero {
   position: relative;
   width: 100%;
@@ -40,33 +41,31 @@ body {
   overflow: hidden;
 }
 
-/* --- Pastor Heath Image --- */
+/* Signature Logo (Above Pastor Heath) */
+.signature {
+  width: 80%;
+  max-width: 360px;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  transform: translateY(-10%);
+  animation: fadeDown 1.6s ease forwards;
+}
+
+/* Pastor Heath */
 .portrait {
-  width: 85%;
-  max-width: 420px;
+  width: 90%;
+  max-width: 430px;
   height: auto;
-  object-fit: contain;
   border: none;
   background: transparent;
-  transform: translateY(8%);
-  z-index: 2;
-  animation: fadeInLeft 1.5s ease forwards;
-}
-
-/* --- Signature Logo --- */
-.signature {
-  position: absolute;
-  top: 8%;
-  right: 10%;
-  width: 70%;
-  max-width: 300px;
+  position: relative;
   z-index: 3;
-  background: transparent;
-  transform: translateY(-10%);
-  animation: fadeInDown 1.8s ease forwards;
+  transform: translateY(-5%);
+  animation: fadeUp 1.8s ease forwards;
 }
 
-/* --- Fade Overlay (behind buttons) --- */
+/* Fade Overlay for Buttons */
 .fade-overlay {
   position: absolute;
   bottom: 0;
@@ -76,7 +75,7 @@ body {
   z-index: 4;
 }
 
-/* --- Buttons --- */
+/* Buttons */
 .cta-buttons {
   position: absolute;
   bottom: 8%;
@@ -86,7 +85,6 @@ body {
   flex-direction: column;
   gap: 0.7rem;
   z-index: 5;
-  animation: fadeInUp 2s ease forwards;
 }
 
 .btn {
@@ -119,7 +117,7 @@ body {
   color: white;
 }
 
-/* --- Tagline --- */
+/* Tagline */
 .tagline {
   position: absolute;
   bottom: 1%;
@@ -136,7 +134,7 @@ body {
   font-weight: 600;
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
   background: var(--navy);
   color: white;
@@ -146,51 +144,51 @@ footer {
   border-top: 2px solid var(--gold);
 }
 
-/* --- Animations --- */
-@keyframes fadeInLeft {
+/* Animations */
+@keyframes fadeDown {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(-40px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(-10%);
   }
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
+@keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-5%);
   }
 }
 
-/* --- Mobile Adjustments --- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Adjustments */
 @media (max-width: 480px) {
-  .portrait {
-    width: 95%;
-    transform: translateY(10%);
+  .signature {
+    width: 90%;
+    transform: translateY(-8%);
   }
 
-  .signature {
-    width: 80%;
-    top: 6%;
-    right: 5%;
+  .portrait {
+    width: 95%;
+    transform: translateY(-2%);
   }
 
   .cta-buttons {
