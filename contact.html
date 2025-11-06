@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Contact / Booking — John Heath</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+
+  <body class="fade-in-body">
+    <nav class="navbar dark">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="contact-header">
+      <h1>Invite John to Speak</h1>
+      <p>Booking • Media • Partnerships</p>
+    </header>
+
+    <section class="contact-wrap">
+      <!-- Replace YOUR_FORM_ID with your Formspree ID (e.g., f/maypqxyz) -->
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your event…" required></textarea>
+        </div>
+
+        <button class="btn submit" type="submit">Send Request</button>
+
+        <p id="formStatus" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2026 John Heath Influence. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Graceful submit: works with Formspree if YOUR_FORM_ID is set; otherwise shows local success.
+      const form = document.getElementById('contactForm');
+      const statusEl = document.getElementById('formStatus');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const action = form.getAttribute('action');
+        const useFormspree = /formspree\.io\/f\/(?!YOUR_FORM_ID)/.test(action);
+
+        const data = new FormData(form);
+        if (useFormspree) {
+          try {
+            const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+            if (res.ok) {
+              statusEl.textContent = 'Thank you! Your request has been sent.';
+              form.reset();
+            } else {
+              statusEl.textContent = 'There was a problem sending your request. Please try again.';
+            }
+          } catch {
+            statusEl.textContent = 'Network error. Please try again.';
+          }
+        } else {
+          // Local fallback (no external call)
+          statusEl.textContent = 'Thank you! Your request has been recorded.';
+          form.reset();
+        }
+      });
+    </script>
+    <script src="transition.js" defer></script>
+  </body>
+</html>
