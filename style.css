@@ -4,20 +4,9 @@
 }
 
 /* Base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html,
-body {
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  background: #ffffff; /* clean white background */
-  color: #000;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: "Poppins", sans-serif; background: #ffffff; color: #000; }
 
-/* Hero section */
 .hero {
   position: relative;
   height: 100vh;
@@ -29,39 +18,31 @@ body {
   text-align: center;
 }
 
-/* John Heath portrait (soft transparent backdrop) */
 .portrait {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;              /* increased from 450px */
+  width: 500px;
   max-width: 85vw;
   opacity: 0.18;
   filter: grayscale(10%) drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
   z-index: 1;
 }
 
-/* Larger Logo */
 .logo {
   position: relative;
   z-index: 2;
-  width: 340px;              /* increased from 260px */
+  width: 340px;
   max-width: 90vw;
   margin-bottom: 1.8rem;
-  animation: fadeUp 1.2s ease forwards;
-}
-@keyframes fadeUp {
-  0% { transform: translateY(20px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Cursive button */
 .btn {
   position: relative;
   z-index: 3;
   font-family: "Great Vibes", cursive;
-  font-size: 2rem;           /* slightly larger */
+  font-size: 2rem;
   color: #fff;
   text-decoration: none;
   background: linear-gradient(135deg, var(--blue), var(--blue2));
@@ -70,12 +51,8 @@ body {
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
   transition: transform 0.25s ease, filter 0.25s ease;
 }
-.btn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.1);
-}
+.btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
 
-/* Footer */
 footer {
   position: absolute;
   bottom: 15px;
@@ -85,17 +62,8 @@ footer {
   color: #666;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .portrait {
-    width: 340px;
-    opacity: 0.25;
-  }
-  .logo {
-    width: 280px;
-  }
-  .btn {
-    font-size: 1.7rem;
-    padding: 0.7rem 2.2rem;
-  }
+  .portrait { width: 340px; opacity: 0.25; }
+  .logo { width: 280px; }
+  .btn { font-size: 1.7rem; padding: 0.7rem 2.2rem; }
 }
