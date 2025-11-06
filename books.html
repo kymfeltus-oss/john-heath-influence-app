@@ -2,84 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#d4af37" />
-    <link rel="apple-touch-icon" href="logo.png" />
-<link rel="stylesheet" href="library.css" />
-    <title>Books by John Heath</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="books.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Influence Library — Influence HQ 2.0</title>
+
+    <!-- Use ONLY library.css for this page's theme -->
+    <link rel="stylesheet" href="library.css" />
   </head>
 
-  <body class="fade-in-body">
-    <nav class="navbar dark">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="books.html" class="active">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <header>
-      <h1>John Heath</h1>
-      <p>Pastor • Executive • Lobbyist • Mentor</p>
+  <body class="library">
+    <header class="lib-header">
+      <h1>Influence Library</h1>
+      <p class="sub">Books and resources that shape leaders.</p>
     </header>
 
-    <section class="books-showcase">
-      <h2 class="glow-text">Coming 2026</h2>
-      <div class="books-grid">
-        <div class="book-card fade-in">
-          <img src="IMG_2855.png" alt="I Am The Circle" />
-          <h3>I Am The Circle</h3>
-          <p>Become the Influencer and Leader You Were Destined to Be</p>
+    <!-- Book Grid -->
+    <main class="lib-wrap">
+      <!-- Example book card (repeat for your books) -->
+      <article class="book-card">
+        <img src="IMG_2855.png" alt="I Am The Circle" class="cover" />
+        <div class="meta">
+          <h3 class="title">I Am The Circle</h3>
+          <p class="desc">
+            Become the influencer and leader you were destined to be.
+          </p>
+          <div class="actions">
+            <a href="#" class="btn">Preview</a>
+            <a href="#" class="btn ghost">Buy</a>
+          </div>
         </div>
+      </article>
 
-        <div class="book-card fade-in">
-          <img src="IMG_2856.png" alt="Ecclesiastical Booty Call" />
-          <h3>Ecclesiastical Booty Call</h3>
-          <p>How the Church Has Become America’s Political One-Night Stand</p>
+      <article class="book-card">
+        <img src="IMG_2866.png" alt="It's Voice Activated" class="cover" />
+        <div class="meta">
+          <h3 class="title">It's Voice Activated</h3>
+          <p class="desc">
+            Creating and framing your world with your words.
+          </p>
+          <div class="actions">
+            <a href="#" class="btn">Preview</a>
+            <a href="#" class="btn ghost">Buy</a>
+          </div>
         </div>
+      </article>
 
-        <div class="book-card fade-in">
-          <img src="IMG_2858.png" alt="G.G.Y.T" />
-          <h3>G.G.Y.T — Girl Get Yourself Together</h3>
-          <p>Achieve the Life, Love, and Success You Desire</p>
+      <article class="book-card">
+        <img src="IMG_2869.png" alt="The Power of the Pivot" class="cover" />
+        <div class="meta">
+          <h3 class="title">The Power of the Pivot</h3>
+          <p class="desc">Finding growth and success in every new direction.</p>
+          <div class="actions">
+            <a href="#" class="btn">Preview</a>
+            <a href="#" class="btn ghost">Buy</a>
+          </div>
         </div>
+      </article>
 
-        <div class="book-card fade-in">
-          <img src="IMG_2867.png" alt="It's Voice Activated" />
-          <h3>It’s Voice Activated</h3>
-          <p>Creating and Framing Your World With Your Words</p>
+      <article class="book-card">
+        <img src="IMG_2856.png" alt="Ecclesiastical Booty Call" class="cover" />
+        <div class="meta">
+          <h3 class="title">Ecclesiastical Booty Call</h3>
+          <p class="desc">
+            How the church has become America's political one-night stand.
+          </p>
+          <div class="actions">
+            <a href="#" class="btn">Preview</a>
+            <a href="#" class="btn ghost">Buy</a>
+          </div>
         </div>
+      </article>
 
-        <div class="book-card fade-in">
-          <img src="IMG_2869.png" alt="The Power of the Pivot" />
-          <h3>The Power of the Pivot</h3>
-          <p>Finding Growth and Success in Every New Direction</p>
+      <article class="book-card">
+        <img src="IMG_2858.png" alt="G.G.Y.T — Girl Get Yourself Together" class="cover" />
+        <div class="meta">
+          <h3 class="title">G.G.Y.T — Girl Get Yourself Together</h3>
+          <p class="desc">
+            Achieving the life, experiencing the love, and walking in the success you desire.
+          </p>
+          <div class="actions">
+            <a href="#" class="btn">Preview</a>
+            <a href="#" class="btn ghost">Buy</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </article>
+    </main>
 
-    <footer>
-      <p>© 2026 John Heath Influence. All Rights Reserved.</p>
+    <footer class="lib-foot">
+      © 2026 Influence HQ 2.0. All Rights Reserved.
     </footer>
-
-    <script src="transition.js" defer></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("service-worker.js")
-          .then(() => console.log("✅ Service Worker Registered"))
-          .catch(err => console.error("Service Worker registration failed:", err));
-      }
-    </script>
   </body>
 </html>
