@@ -1,80 +1,67 @@
 :root {
-  --bg1: #0d1117;
-  --bg2: #1a1f29;
   --blue: #3b82f6;
   --blue2: #60a5fa;
-  --white: #e6e6e6;
-  --muted: #9ca3af;
 }
 
-/* Base */
+/* Reset + base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; font-family: "Poppins", sans-serif; color: var(--white); }
-body {
-  background: linear-gradient(180deg, var(--bg1), var(--bg2));
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
+html, body { height: 100%; font-family: "Poppins", sans-serif; background: #ffffff; color: #000; }
 
-/* Fade Animation */
+/* Fade animation */
 .fade-in-body { animation: fadeIn 1s ease forwards; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Hero Section */
+/* Hero section */
 .hero {
   position: relative;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
-  width: 100%;
-  overflow: hidden;
   text-align: center;
+  overflow: hidden;
 }
 
-/* Transparent Portrait */
+/* John Heath portrait - softly visible */
 .portrait {
-  width: 360px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
   max-width: 80vw;
-  object-fit: contain;
-  opacity: 0.3;
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.5));
-  animation: floatUp 2.5s ease forwards;
-}
-@keyframes floatUp {
-  0% { transform: translateY(40px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 0.3; }
+  opacity: 0.18; /* transparency */
+  z-index: 1;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25));
 }
 
-/* HQ 2.0 Logo Overlay */
+/* Logo above button */
 .logo {
-  position: absolute;
+  position: relative;
+  z-index: 2;
   width: 260px;
   max-width: 70vw;
-  animation: fadeUp 1.8s ease forwards;
+  margin-bottom: 1.8rem;
+  animation: fadeUp 1.2s ease forwards;
 }
 @keyframes fadeUp {
-  0% { transform: translateY(30px); opacity: 0; }
+  0% { transform: translateY(20px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* CTA Button */
+/* Step Into Influence button */
 .btn {
-  position: absolute;
-  bottom: 18%;
-  padding: 0.9rem 2.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #081018;
+  position: relative;
+  z-index: 3;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8rem;
+  color: #fff;
   background: linear-gradient(135deg, var(--blue), var(--blue2));
-  border: none;
-  border-radius: 12px;
+  padding: 0.7rem 2.2rem;
+  border-radius: 14px;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(59,130,246,0.35);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 .btn:hover {
@@ -84,17 +71,17 @@ body {
 
 /* Footer */
 footer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--muted);
   position: absolute;
-  bottom: 10px;
+  bottom: 12px;
   width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .portrait { width: 280px; opacity: 0.4; }
+  .portrait { width: 340px; opacity: 0.25; }
   .logo { width: 220px; }
-  .btn { bottom: 14%; font-size: 1rem; }
+  .btn { font-size: 1.5rem; padding: 0.6rem 1.8rem; }
 }
