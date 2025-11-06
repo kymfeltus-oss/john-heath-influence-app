@@ -31,10 +31,11 @@ body {
   padding: 0 1rem;
 }
 
-/* Logo - positioned above Pastor Heath */
+/* Logo - positioned above Pastor Heath
+   Increased size: larger default max-width + desktop bump */
 .signature {
-  width: 90%;
-  max-width: 380px;
+  width: 92%;
+  max-width: 460px;           /* was 380px — larger by default */
   background: transparent;
   position: relative;
   z-index: 3;
@@ -160,6 +161,7 @@ footer {
 @media (max-width: 480px) {
   .signature {
     width: 100%;
+    max-width: 420px;         /* keep it bold but safe on small screens */
     margin-top: 0.5rem;
   }
 
@@ -175,5 +177,12 @@ footer {
 
   .tagline {
     font-size: 0.85rem;
+  }
+}
+
+/* Desktop boost — make logo even bigger on wide screens */
+@media (min-width: 1024px) {
+  .signature {
+    max-width: 600px;         /* extra presence on desktop */
   }
 }
