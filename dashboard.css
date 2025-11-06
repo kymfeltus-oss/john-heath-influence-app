@@ -4,14 +4,11 @@
   --white: #ffffff;
   --text: #0a0a0a;
   --muted: #6b7280;
+  --stroke: #e5e7eb;
 }
 
 /* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* Base Layout */
 html, body {
@@ -19,7 +16,6 @@ html, body {
   font-family: "Poppins", sans-serif;
   background: var(--white);
   color: var(--text);
-  overflow-x: hidden;
 }
 
 /* Sidebar */
@@ -33,24 +29,29 @@ html, body {
   color: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   padding-top: 1rem;
-  transition: width 0.3s ease;
-  z-index: 20;
 }
-.sidebar.open {
-  width: 80px;
+.main-content {
+  margin-left: 240px;
+  overflow-x: hidden;
 }
-.sidebar .logo-area {
+
+/* Sidebar logo */
+.logo-area {
   width: 100%;
   text-align: center;
   margin-bottom: 1.5rem;
 }
 .hq-logo {
-  width: 140px;
+  width: 160px;
   max-width: 90%;
+  display: block;
+  margin: 0 auto 1rem auto;
+  object-fit: contain;
 }
+
+/* Sidebar menu */
 .menu {
   width: 100%;
   display: flex;
@@ -62,65 +63,31 @@ html, body {
   padding: 0.9rem 1.2rem;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
   font-weight: 500;
   transition: background 0.25s ease, padding-left 0.25s ease;
 }
-.menu a:hover {
-  background: var(--blue2);
-  padding-left: 1.5rem;
-}
+.menu a:hover,
 .menu a.active {
   background: var(--blue2);
+  padding-left: 1.6rem;
 }
 
-/* Sidebar Icons */
-.icon {
-  font-size: 1.1rem;
-}
-
-/* Toggle Button */
-.toggle-btn {
-  position: fixed;
-  top: 1rem;
-  left: 260px;
-  font-size: 1.6rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--blue);
-  z-index: 30;
-}
-.sidebar.open ~ .toggle-btn {
-  left: 100px;
-}
-
-/* Main Content */
-.main-content {
-  margin-left: 240px;
-  transition: margin-left 0.3s ease;
-}
-.sidebar.open ~ .main-content {
-  margin-left: 80px;
-}
-
-/* Hero Banner */
+/* Hero banner */
 .hero {
   width: 100%;
-  background: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--stroke);
 }
 .hero-banner {
   width: 100%;
   max-height: 380px;
   object-fit: cover;
+  display: block;
 }
 
-/* Modules */
+/* Dashboard cards */
 .modules {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -131,16 +98,19 @@ html, body {
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
-  text-decoration: none;
-  color: var(--text);
-  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.06);
+  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.06);
   padding: 1.2rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
 }
 .card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.2);
   border-color: #dbeafe;
+}
+.card-logo {
+  height: 40px;
+  margin-bottom: 0.5rem;
 }
 .card h3 {
   font-size: 1.1rem;
@@ -166,7 +136,7 @@ html, body {
   transform: scale(1.05);
 }
 
-/* Heath Quotes */
+/* Quotes section */
 .quotes {
   text-align: center;
   margin: 1rem 0 2rem;
@@ -193,13 +163,10 @@ html, body {
 /* Responsive */
 @media (max-width: 768px) {
   .sidebar {
-    width: 80px;
-  }
-  .toggle-btn {
-    left: 100px;
+    width: 200px;
   }
   .main-content {
-    margin-left: 80px;
+    margin-left: 200px;
   }
   .hero-banner {
     max-height: 240px;
