@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Influence HQ 2.0 — Dashboard</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -12,41 +13,38 @@
   </head>
 
   <body>
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
+    <!-- Fixed Sidebar -->
+    <aside class="sidebar">
       <div class="logo-area">
         <img src="hq-logo.png" alt="Influence HQ 2.0" class="hq-logo" />
       </div>
+
       <nav class="menu">
-        <a href="dashboard.html" class="active">
-          <span class="icon">🏠</span> Dashboard
-        </a>
-        <a href="books.html"><span class="icon">📚</span> Influence Library</a>
-        <a href="consult.html"><span class="icon">🎯</span> Coaching & Consults</a>
-        <a href="contact.html"><span class="icon">🎙️</span> Speaking & Media</a>
-        <a href="university.html"><span class="icon">🎓</span> Influence University</a>
-        <a href="about.html#quotes"><span class="icon">💬</span> Heath Quotes Hub</a>
-        <a href="#"><span class="icon">⚙️</span> Settings / Logout</a>
+        <a href="dashboard.html" class="active">🏠 Dashboard</a>
+        <a href="books.html">📚 Influence Library</a>
+        <a href="consult.html">🎯 Coaching & Consults</a>
+        <a href="contact.html">🎙️ Speaking & Media</a>
+        <a href="university.html">🎓 Influence University</a>
+        <a href="about.html#quotes">💬 Heath Quotes Hub</a>
+        <a href="#">⚙️ Settings / Logout</a>
       </nav>
     </aside>
-
-    <!-- Sidebar Toggle -->
-    <button class="toggle-btn" id="toggle-btn">☰</button>
 
     <!-- Main Content -->
     <main class="main-content">
       <!-- Hero Banner -->
       <section class="hero">
         <img
-          src="ChatGPT Image Nov 6, 2025, 12_35_48 PM.png"
+          src="dashboard-hero.png"
           alt="John Heath and Books"
           class="hero-banner"
         />
       </section>
 
-      <!-- Content Section -->
+      <!-- Dashboard Modules -->
       <section class="modules">
         <div class="card">
+          <img src="book-logo.png" alt="Book Logo" class="card-logo" />
           <h3>Influence Library</h3>
           <p>Books and resources that shape leaders.</p>
           <a href="books.html" class="btn">View Library</a>
@@ -94,16 +92,9 @@
       </footer>
     </main>
 
-    <!-- JS -->
+    <!-- Scripts -->
     <script>
-      // Sidebar toggle
-      const toggleBtn = document.getElementById("toggle-btn");
-      const sidebar = document.getElementById("sidebar");
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-      });
-
-      // Quotes rotation
+      // Rotate Heath Quotes
       const quotes = [
         "“It’s Voice Activated.”",
         "“Influence Begins With Vision.”",
