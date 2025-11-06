@@ -1,0 +1,53 @@
+:root { --gold:#d4af37; --gray:#ddd; --black:#000; --navy:#0e1a2b; }
+
+body{
+  margin:0; font-family:"Poppins",sans-serif; background:linear-gradient(180deg,#000 0%, #0b0b0b 100%);
+  color:var(--gold); text-align:center; min-height:100dvh; display:flex; flex-direction:column;
+}
+
+/* Navbar */
+.navbar{width:100%;position:fixed;top:0;left:0;z-index:10;background:#000;display:flex;justify-content:center;padding:.5rem 0;border-bottom:1px solid rgba(212,175,55,.3);}
+.navbar ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
+.navbar a{color:var(--gold);text-decoration:none;transition:.3s;font-weight:500;}
+.navbar a:hover{color:#f7e18b;}
+.active{text-decoration:underline;}
+
+/* Hero */
+.dash-hero{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:980px;margin:4.2rem auto 1rem;padding:0 1rem;}
+.dash-left{text-align:left;}
+.dash-left h1{margin:.2rem 0;font-size:1.8rem;color:var(--gold);}
+.dash-left p{margin:0;color:var(--gray);}
+.dash-right img{width:120px;height:120px;border-radius:12px;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 16px rgba(212,175,55,.35);}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:980px;margin:0 auto 1rem;padding:0 1rem 1rem;}
+.card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:14px;
+  padding:1rem;
+  text-align:left;
+  transition:.25s;
+  color:var(--gold);
+  text-decoration:none;
+  min-height:110px;
+}
+.card h3{margin:.2rem 0 .4rem 0;}
+.card p{margin:0;color:var(--gray);}
+.card:hover{transform:translateY(-2px);box-shadow:0 0 16px rgba(212,175,55,.35);}
+.card.accent{background:rgba(30,58,138,.18);}
+.card.disabled{opacity:.6;pointer-events:none}
+
+/* Sticky footer nav */
+footer.sticky{
+  margin-top:auto;background:#0e0e0e;border-top:1px solid rgba(212,175,55,.3);
+  display:flex;justify-content:space-evenly;align-items:center;padding:.6rem 1rem;
+}
+footer.sticky a{color:var(--gray);text-decoration:none;}
+footer.sticky a.active, footer.sticky a:hover{color:var(--gold);}
+
+/* Mobile */
+@media (max-width: 520px){
+  .dash-right img{width:96px;height:96px;}
+  .dash-left h1{font-size:1.5rem;}
+}
