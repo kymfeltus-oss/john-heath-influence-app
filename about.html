@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>About John Heath</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="about.css" />
   </head>
 
@@ -17,11 +14,17 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <header class="about-header">
-      <img src="john-heath.jpg" alt="John Heath" class="about-photo" />
+      <!-- Particle aura behind the portrait -->
+      <div class="portrait-aura">
+        <canvas id="aura"></canvas>
+        <img src="john-heath.jpg" alt="John Heath" class="about-photo" />
+      </div>
+
       <div class="about-intro">
         <h1>John Heath</h1>
         <p>Pastor • Executive • Lobbyist • Mentor</p>
@@ -48,15 +51,29 @@
       </p>
     </section>
 
+    <!-- Intro media section -->
+    <section class="media-section">
+      <h2>Voice Vision Leadership</h2>
+
+      <!-- If you have a video, replace src with your MP4 file (e.g., media/intro.mp4) -->
+      <video class="media-player" controls playsinline poster="logo.png">
+        <source src="intro.mp4" type="video/mp4" />
+        <!-- Fallback: simple audio if no video yet -->
+        Your browser does not support the video tag.
+      </video>
+
+      <p class="media-note">Video coming soon. In the meantime, enjoy upcoming releases in the Books section.</p>
+    </section>
+
     <section class="cta-section">
-      <a href="#" class="btn primary">Invite John to Speak</a>
+      <a href="contact.html" class="btn primary">Invite John to Speak</a>
     </section>
 
     <footer>
       <p>© 2026 John Heath Influence. All Rights Reserved.</p>
     </footer>
 
-    <!-- transition script -->
+    <script src="particles.js" defer></script>
     <script src="transition.js" defer></script>
   </body>
 </html>
