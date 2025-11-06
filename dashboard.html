@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#d4af37" />
+    <link rel="apple-touch-icon" href="logo.png" />
+
+    <title>Dashboard — John Heath Influence</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+
+  <body class="fade-in-body">
+    <nav class="navbar dark">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="consult.html">Consult</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="dash-hero">
+      <div class="dash-left">
+        <h1>Welcome to Influence HQ</h1>
+        <p>Pastor • Executive • Lobbyist • Mentor</p>
+      </div>
+      <div class="dash-right">
+        <img src="john-heath.jpg" alt="John Heath" />
+      </div>
+    </header>
+
+    <main class="cards">
+      <a class="card" href="books.html">
+        <h3>Books</h3>
+        <p>Explore 2026 releases and previews.</p>
+      </a>
+
+      <a class="card" href="about.html">
+        <h3>About John</h3>
+        <p>Bio, mission, and Voice Vision Leadership.</p>
+      </a>
+
+      <a class="card accent" href="consult.html">
+        <h3>Consultation</h3>
+        <p>Book a 30 or 60 minute session.</p>
+      </a>
+
+      <a class="card" href="contact.html">
+        <h3>Invite to Speak</h3>
+        <p>Booking • Media • Partnerships</p>
+      </a>
+
+      <div class="card disabled">
+        <h3>Events (Soon)</h3>
+        <p>Speaking calendar & appearances.</p>
+      </div>
+
+      <div class="card quote">
+        <h3>Quote of the Day</h3>
+        <p id="quote">“It’s voice activated.”</p>
+      </div>
+    </main>
+
+    <footer class="sticky">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </footer>
+
+    <script src="transition.js" defer></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+      }
+      // simple rotating quote
+      const quotes = [
+        "It’s voice activated.",
+        "Influence begins with vision.",
+        "Lead with words, finish with action."
+      ];
+      let i = 0;
+      setInterval(() => {
+        i = (i + 1) % quotes.length;
+        document.getElementById("quote").textContent = quotes[i];
+      }, 4000);
+    </script>
+  </body>
+</html>
