@@ -13,7 +13,7 @@ html, body {
   color: var(--text);
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
   position: relative;
   height: 100vh;
@@ -25,25 +25,26 @@ html, body {
   overflow: hidden;
 }
 
-/* Transparent Portrait Background */
+/* John Heath Portrait */
 .portrait {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  max-width: 80vw;
-  opacity: 0.15;
-  filter: grayscale(15%) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25));
+  width: 600px;
+  max-width: 85vw;
+  opacity: 0.18; /* Faint but visible */
   z-index: 1;
+  filter: grayscale(10%) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+  object-fit: cover;
 }
 
-/* Logo */
+/* HQ Logo */
 .logo {
   position: relative;
   z-index: 2;
-  width: 340px;
-  max-width: 85vw;
+  width: 360px;
+  max-width: 90vw;
   margin-bottom: 1.8rem;
 }
 
@@ -76,9 +77,9 @@ footer {
   color: #666;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .portrait { width: 340px; opacity: 0.22; }
+  .portrait { width: 400px; opacity: 0.25; }
   .logo { width: 280px; }
-  .btn { font-size: 1.7rem; padding: 0.7rem 2.2rem; }
+  .btn { font-size: 1.6rem; padding: 0.7rem 2.2rem; }
 }
