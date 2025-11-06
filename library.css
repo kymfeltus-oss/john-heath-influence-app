@@ -1,0 +1,83 @@
+:root {
+  --blue: #3b82f6;
+  --blue2: #60a5fa;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --stroke: #e5e7eb;
+  --text: #0a0a0a;
+}
+
+/* Base layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: var(--white);
+  color: var(--text);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: var(--white);
+  padding: 0.7rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(59,130,246,0.25);
+  transition: all 0.25s ease;
+}
+.btn:hover {
+  background: var(--blue2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59,130,246,0.35);
+}
+
+/* Cards or book items */
+.card, .item {
+  background: var(--white);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(17,24,39,0.06);
+  padding: 1.2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover, .item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(59,130,246,0.18);
+}
+
+/* Titles and text */
+h1, h2, h3, h4, h5 {
+  color: var(--blue);
+  font-weight: 600;
+}
+p {
+  color: var(--gray);
+}
+
+/* Footer */
+footer {
+  background: var(--blue);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .card, .item {
+    padding: 1rem;
+  }
+}
