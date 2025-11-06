@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#3b82f6" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <title>Influence University</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="university.css" />
+  </head>
+
+  <body class="fade-in-body">
+    <header class="uni-hero">
+      <div class="uni-bg" aria-hidden="true"></div>
+      <div>
+        <h1 class="uni-logo">Influence University</h1>
+        <p class="uni-tag">Educate • Empower • Elevate</p>
+      </div>
+      <a class="btn ghost page-link" href="dashboard.html">← Back to HQ</a>
+    </header>
+
+    <!-- RESOURCE LIBRARY -->
+    <section class="grid">
+      <article class="card">
+        <div class="mock book"></div>
+        <h3>I Am The Circle (E-book)</h3>
+        <p>Become the influencer and leader you were destined to be.</p>
+        <div class="row">
+          <a href="#" class="btn primary">Preview</a>
+          <a href="#" class="btn ghost">Buy</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="mock book alt"></div>
+        <h3>It’s Voice Activated (Guide)</h3>
+        <p>Creating and framing your world with your words.</p>
+        <div class="row">
+          <a href="#" class="btn primary">Preview</a>
+          <a href="#" class="btn ghost">Buy</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="mock video"></div>
+        <h3>Masterclass: Influence Fundamentals</h3>
+        <p>Signature video session for emerging leaders.</p>
+        <div class="row">
+          <a href="#" class="btn primary">Watch Trailer</a>
+          <a href="#" class="btn ghost">Enroll</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="mock video alt"></div>
+        <h3>Communication Lab</h3>
+        <p>Practical drills to sharpen your voice and presence.</p>
+        <div class="row">
+          <a href="#" class="btn primary">Watch Trailer</a>
+          <a href="#" class="btn ghost">Enroll</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="programs">
+      <h2>Programs & Pathways</h2>
+      <div class="prog-grid">
+        <div class="prog">
+          <h4>One-on-One Coaching</h4>
+          <p>30 or 60 minutes — targeted clarity.</p>
+          <a href="consult.html" class="link">Book now →</a>
+        </div>
+        <div class="prog">
+          <h4>Group Mentorship</h4>
+          <p>Grow with peers, guided by principles.</p>
+          <a href="consult.html" class="link">Request details →</a>
+        </div>
+        <div class="prog" id="career">
+          <h4>Career & Ministry Track</h4>
+          <p>Practical, step-by-step pathways for impact.</p>
+          <a href="consult.html#career" class="link">Start here →</a>
+        </div>
+        <div class="prog">
+          <h4>Leadership Intensives</h4>
+          <p>Short, focused sprints to level up.</p>
+          <a href="consult.html" class="link">Get notified →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="uni-quote" aria-live="polite">
+      <span class="tag">Heath Quotes</span>
+      <span id="uquote">“Influence begins with vision.”</span>
+    </section>
+
+    <footer class="foot">© 2026 Influence University. All Rights Reserved.</footer>
+
+    <script src="transition.js" defer></script>
+    <script>
+      if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js");
+      const uq = ["Influence begins with vision.","It’s voice activated.","Lead with words, finish with action.","Faith fuels leadership."];
+      let idx = 0;
+      setInterval(()=>{ idx=(idx+1)%uq.length; const el=document.getElementById("uquote"); el.style.opacity=0; setTimeout(()=>{el.textContent=uq[idx]; el.style.opacity=1;},220); },4200);
+    </script>
+  </body>
+</html>
