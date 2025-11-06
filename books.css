@@ -1,21 +1,73 @@
-:root{--gold:#d4af37;--gray:#ddd;--black:#000;}
-.fade-in-body{animation:pageFadeIn .6s ease forwards;} .fade-out-body{animation:pageFadeOut .4s ease forwards;}
-@keyframes pageFadeIn{from{opacity:0;}to{opacity:1;}} @keyframes pageFadeOut{from{opacity:1;}to{opacity:0;}}
+<main class="lib-wrap">
 
-.navbar{width:100%;position:fixed;top:0;left:0;z-index:10;background:#000;display:flex;justify-content:center;padding:.4rem 0;border-bottom:1px solid rgba(212,175,55,0.3);}
-.navbar ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
-.navbar a{color:var(--gold);text-decoration:none;transition:.3s;font-weight:500;} .navbar a:hover{color:#f7e18b;} .active{text-decoration:underline;}
+  <article class="book-card">
+    <img src="IMG_2856.png" alt="Ecclesiastical Booty Call" class="cover" />
+    <div class="meta">
+      <h3 class="title">Ecclesiastical Booty Call</h3>
+      <p class="desc">
+        How the church has become America's political one-night stand.
+      </p>
+      <div class="actions">
+        <a href="#" class="btn">Preview</a>
+        <a href="#" class="btn ghost">Buy</a>
+      </div>
+    </div>
+  </article>
 
-body{margin:0;font-family:"Poppins",sans-serif;background:#000;color:var(--gold);text-align:center;min-height:100dvh;display:flex;flex-direction:column;justify-content:space-between;}
-header{padding:3.5rem 0 .8rem;} header h1{margin:0;font-size:1.8rem;} header p{margin:.2rem 0 0;font-size:.9rem;color:var(--gray);}
+  <article class="book-card">
+    <img src="IMG_2855.png" alt="G.G.Y.T. Girl Get Yourself Together" class="cover" />
+    <div class="meta">
+      <h3 class="title">G.G.Y.T. Girl Get Yourself Together</h3>
+      <p class="desc">
+        Achieving the life, experiencing the love, and walking in the success you desire.
+      </p>
+      <div class="actions">
+        <a href="#" class="btn">Preview</a>
+        <a href="#" class="btn ghost">Buy</a>
+      </div>
+    </div>
+  </article>
 
-.glow-text{text-shadow:0 0 10px rgba(212,175,55,.6),0 0 20px rgba(212,175,55,.3);animation:goldPulse 2.5s ease-in-out infinite alternate;}
-@keyframes goldPulse{from{text-shadow:0 0 6px rgba(212,175,55,.4);}to{text-shadow:0 0 18px rgba(212,175,55,.9);}}
+  <article class="book-card">
+    <img src="IMG_2869.png" alt="The Power of the Pivot" class="cover" />
+    <div class="meta">
+      <h3 class="title">The Power of the Pivot</h3>
+      <p class="desc">
+        Finding growth and success in every new direction.
+      </p>
+      <div class="actions">
+        <a href="#" class="btn">Preview</a>
+        <a href="#" class="btn ghost">Buy</a>
+      </div>
+    </div>
+  </article>
 
-.books-showcase{padding:0 1rem 1rem;}
-.books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;justify-items:center;}
-.book-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.3);border-radius:12px;padding:.8rem;max-width:200px;transition:.3s;}
-.book-card:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(212,175,55,.4);}
-.book-card img{width:100%;border-radius:8px;margin-bottom:.6rem;}
-.book-card h3{font-size:1rem;margin:.3rem 0;} .book-card p{font-size:.75rem;color:var(--gray);}
-footer{background:#0e0e0e;color:var(--gray);padding:.7rem;border-top:1px solid rgba(212,175,55,.3);font-size:.75rem;}
+  <article class="book-card">
+    <img src="IMG_2867.png" alt="It's Voice Activated" class="cover" />
+    <div class="meta">
+      <h3 class="title">It's Voice Activated</h3>
+      <p class="desc">
+        Creating and framing your world with your words.
+      </p>
+      <div class="actions">
+        <a href="#" class="btn">Preview</a>
+        <a href="#" class="btn ghost">Buy</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="book-card">
+    <img src="IMG_2858.png" alt="I Am The Circle" class="cover" />
+    <div class="meta">
+      <h3 class="title">I Am The Circle</h3>
+      <p class="desc">
+        Become the influencer and leader you were destined to be.
+      </p>
+      <div class="actions">
+        <a href="#" class="btn">Preview</a>
+        <a href="#" class="btn ghost">Buy</a>
+      </div>
+    </div>
+  </article>
+
+</main>
