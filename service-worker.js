@@ -1,6 +1,8 @@
+/* service-worker.js — caches pages, scripts, and images for offline use */
+
 const CACHE_NAME = "jh-influence-cache-v1";
 const ASSETS = [
-  "/",
+  "./",
   "index.html",
   "books.html",
   "about.html",
@@ -11,6 +13,8 @@ const ASSETS = [
   "contact.css",
   "transition.js",
   "particles.js",
+  "service-worker.js",
+  "manifest.json",
   "logo.png",
   "john-heath.jpg",
   "IMG_2855.png",
@@ -20,22 +24,34 @@ const ASSETS = [
   "IMG_2869.png"
 ];
 
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+/* Install event — pre-cache core assets */
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(ASSETS))
+      .then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(resp => resp || fetch(e.request))
+/* Fetch event — serve from cache first, then network fallback */
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(resp => {
+      return resp || fetch(event.request);
+    })
   );
 });
 
-self.addEventListener("activate", e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    )
+/* Activate event — remove old caches */
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
+      );
+    })
   );
+  self.clients.claim();
 });
