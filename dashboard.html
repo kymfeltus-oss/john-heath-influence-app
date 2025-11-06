@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#3b82f6" />
-    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="apple-touch-icon" href="hq-logo.png" />
     <title>Influence HQ 2.0 — Dashboard</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -13,19 +13,16 @@
   </head>
 
   <body class="fade-in-body">
-    <!-- HERO / CINEMATIC -->
+    <!-- HERO -->
     <header class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
 
       <div class="hero-left">
-        <div class="hq-lockup">
-          <h1 class="logo">Influence <span>HQ 2.0</span></h1>
-          <div class="wave" aria-hidden="true"></div>
-        </div>
+        <img src="hq-logo.png" alt="Influence HQ 2.0" class="hq-logo" />
         <p class="tagline">Leadership • Voice • Vision</p>
 
         <div class="cta-row">
-          <a class="btn primary page-link" href="university.html">Explore the Ecosystem</a>
+          <a class="btn primary page-link" href="university.html">Explore Influence University</a>
           <a class="btn ghost page-link" href="consult.html">Book a Consultation</a>
         </div>
       </div>
@@ -36,7 +33,7 @@
       </div>
     </header>
 
-    <!-- INTERACTIVE MODULES -->
+    <!-- MODULES -->
     <main class="modules">
       <a class="panel tilt" href="books.html">
         <div class="panel-head">
@@ -44,6 +41,9 @@
           <h3>Influence Library</h3>
         </div>
         <p>Books, guides, and exclusive insights.</p>
+        <div class="covers">
+          <div class="cover"></div><div class="cover alt"></div><div class="cover"></div>
+        </div>
       </a>
 
       <a class="panel tilt" href="consult.html">
@@ -52,6 +52,7 @@
           <h3>Coaching & Consults</h3>
         </div>
         <p>30 or 60 minutes • focused outcomes.</p>
+        <div class="panel-actions"><span class="chip">30m / $80</span><span class="chip">60m / $150</span></div>
       </a>
 
       <a class="panel tilt" href="contact.html">
@@ -62,11 +63,11 @@
         <p>Invite the voice of influence to your platform.</p>
       </a>
 
-      <a class="panel tilt" href="university.html">
-        <div class="panel-head">
-          <svg viewBox="0 0 24 24" class="ico"><path d="M4 8l8-4 8 4-8 4-8-4zm0 5l8 4 8-4"/></svg>
-          <h3>Influence University</h3>
+      <a class="panel tilt uni" href="university.html">
+        <div class="uni-logo-wrap">
+          <img src="uni-logo.png" alt="Influence University" />
         </div>
+        <h3>Influence University</h3>
         <p>Courses, mentorship, and leadership development.</p>
       </a>
 
@@ -87,7 +88,7 @@
       </a>
     </main>
 
-    <!-- QUOTE TICKER -->
+    <!-- QUOTES -->
     <section class="ticker" aria-live="polite">
       <span class="tag">Heath Quotes</span>
       <span id="quote" class="line">“It’s voice activated.”</span>
@@ -95,12 +96,11 @@
 
     <footer class="foot">© 2026 Influence HQ 2.0. All Rights Reserved.</footer>
 
-    <!-- JS -->
     <script src="transition.js" defer></script>
     <script>
       if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js");
 
-      // tilt / parallax effect on panels
+      // tilt cards
       document.querySelectorAll(".tilt").forEach(card => {
         card.addEventListener("mousemove", e => {
           const r = card.getBoundingClientRect();
@@ -114,7 +114,7 @@
         });
       });
 
-      // quote rotator
+      // quotes
       const quotes = [
         "It’s voice activated.",
         "Influence begins with vision.",
