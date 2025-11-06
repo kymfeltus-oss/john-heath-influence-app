@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#d4af37" />
+    <link rel="apple-touch-icon" href="logo.png" />
+
+    <title>Consultation — John Heath</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="consult.css" />
+  </head>
+
+  <body class="fade-in-body">
+    <nav class="navbar dark">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="consult.html" class="active">Consult</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="consult-header">
+      <h1>Book a Consultation</h1>
+      <p>30 minutes — $80 &nbsp; • &nbsp; 60 minutes — $150</p>
+    </header>
+
+    <section class="consult-wrap">
+      <form
+        id="consultForm"
+        action="https://formspree.io/f/xgvgeqad"
+        method="POST"
+        novalidate
+      >
+        <input type="hidden" name="type" value="Consultation Request" />
+
+        <div class="field two-col">
+          <div class="col">
+            <label for="duration">Duration</label>
+            <select id="duration" name="duration" required>
+              <option value="">Select</option>
+              <option value="30">30 minutes — $80</option>
+              <option value="60">60 minutes — $150</option>
+            </select>
+          </div>
+
+          <div class="col">
+            <label for="timezone">Time Zone</label>
+            <select id="timezone" name="timezone" required>
+              <option value="America/Chicago" selected>America/Chicago (CT)</option>
+              <option value="America/New_York">America/New_York (ET)</option>
+              <option value="America/Denver">America/Denver (MT)</option>
+              <option value="America/Los_Angeles">America/Los_Angeles (PT)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field two-col">
+          <div class="col">
+            <label for="date">Preferred Date</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+          <div class="col">
+            <label for="time">Preferred Time</label>
+            <input id="time" name="time" type="time" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@email.com" required />
+        </div>
+
+        <div class="field">
+          <label for="notes">Notes / Topic</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="What would you like to discuss?"></textarea>
+        </div>
+
+        <button class="btn submit" type="submit">Request This Time</button>
+        <p id="formStatus" class="status" aria-live="polite"></p>
+      </form>
+
+      <aside class="payment-box">
+        <h3>Secure Payment</h3>
+        <p>Complete your booking by choosing your session length:</p>
+
+        <!-- Replace # with your live Stripe Payment Link URLs -->
+        <a id="pay30" class="btn pay" href="#" target="_blank" rel="noopener">Pay $80 (30 min)</a>
+        <a id="pay60" class="btn pay outline" href="#" target="_blank" rel="noopener">Pay $150 (60 min)</a>
+
+        <p class="small">
+          You’ll receive a confirmation email with meeting details after your request is received.
+        </p>
+      </aside>
+    </section>
+
+    <footer>
+      <p>© 2026 John Heath Influence. All Rights Reserved.</p>
+    </footer>
+
+    <script src="transition.js" defer></script>
+    <script>
+      // Toggle which payment button is emphasized
+      const durationEl = document.getElementById("duration");
+      const pay30 = document.getElementById("pay30");
+      const pay60 = document.getElementById("pay60");
+
+      function updatePayButtons() {
+        const v = durationEl.value;
+        pay30.classList.toggle("outline", v !== "30");
+        pay60.classList.toggle("outline", v !== "60");
+      }
+      durationEl.addEventListener("change", updatePayButtons);
+      updatePayButtons();
+
+      // Submit to Formspree
+      const form = document.getElementById("consultForm");
+      const statusEl = document.getElementById("formStatus");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" },
+          });
+          if (res.ok) {
+            statusEl.textContent = "✅ Thank you! We’ll email you to confirm the time.";
+            statusEl.style.color = "#9ee59e";
+            form.reset();
+            updatePayButtons();
+          } else {
+            statusEl.textContent = "⚠️ There was a problem. Please try again.";
+            statusEl.style.color = "#ffae42";
+          }
+        } catch {
+          statusEl.textContent = "❌ Network error. Please try again.";
+          statusEl.style.color = "#ff5c5c";
+        }
+      });
+    </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+      }
+    </script>
+  </body>
+</html>
