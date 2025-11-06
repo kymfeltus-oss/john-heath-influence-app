@@ -13,51 +13,72 @@
   </head>
 
   <body>
-    <!-- Full-width logo header -->
+    <!-- Header -->
     <header class="topbar">
       <img src="hq-logo.png" alt="Influence HQ 2.0" class="top-logo" />
     </header>
 
-    <!-- Hero image background -->
+    <!-- John Heath subtle background -->
     <div class="hero-bg">
       <img src="john-heath-hero.png" alt="John Heath" />
     </div>
 
     <main class="content">
-      <h1 class="title">Welcome to Influence HQ 2.0</h1>
-      <p class="subtitle">Leadership • Voice • Vision</p>
+      <!-- Greeting Section -->
+      <section class="intro">
+        <h1 class="fade-greet">Welcome Back, Influencer.</h1>
+        <p class="fade-sub" id="rotating-tagline">Educate • Empower • Elevate</p>
+      </section>
 
-      <!-- Module cards -->
+      <!-- Modules -->
       <section class="modules">
-        <a class="card" href="books.html">
+        <div class="card" id="library">
           <h3>Influence Library</h3>
           <p>Books and resources that shape leaders.</p>
-        </a>
+          <div class="overlay">
+            <a href="books.html" class="mini-btn">View Library</a>
+          </div>
+        </div>
 
-        <a class="card" href="consult.html">
+        <div class="card" id="consult">
           <h3>Coaching & Consults</h3>
           <p>Book a 30 or 60 minute session for clarity and growth.</p>
-        </a>
+          <div class="overlay">
+            <a href="consult.html" class="mini-btn">Book Now</a>
+          </div>
+        </div>
 
-        <a class="card" href="contact.html">
+        <div class="card" id="media">
           <h3>Speaking & Media</h3>
           <p>Invite the voice of influence to your platform.</p>
-        </a>
+          <div class="overlay">
+            <a href="contact.html" class="mini-btn">Request</a>
+          </div>
+        </div>
 
-        <a class="card" href="university.html">
+        <div class="card" id="university">
           <h3>Influence University</h3>
           <p>Courses, mentorship, and leadership development.</p>
-        </a>
+          <div class="overlay">
+            <a href="university.html" class="mini-btn">Explore</a>
+          </div>
+        </div>
 
-        <a class="card" href="consult.html#career">
+        <div class="card" id="career">
           <h3>Career & Ministry Track</h3>
-          <p>Practical pathways to expand your influence.</p>
-        </a>
+          <p>Practical pathways to grow influence.</p>
+          <div class="overlay">
+            <a href="consult.html#career" class="mini-btn">Start Now</a>
+          </div>
+        </div>
 
-        <a class="card" href="about.html#quotes">
+        <div class="card" id="quotes">
           <h3>Heath Quotes Hub</h3>
           <p>Signature quotes that define leadership & vision.</p>
-        </a>
+          <div class="overlay">
+            <a href="about.html#quotes" class="mini-btn">View Quotes</a>
+          </div>
+        </div>
       </section>
 
       <!-- Heath Quotes -->
@@ -67,15 +88,37 @@
       </section>
     </main>
 
-    <footer class="foot">© 2026 Influence HQ 2.0. All Rights Reserved.</footer>
+    <footer class="foot">
+      © 2026 Influence HQ 2.0. All Rights Reserved.
+    </footer>
 
+    <!-- Scripts -->
     <script>
+      // Rotating subtagline
+      const taglines = [
+        "Educate • Empower • Elevate",
+        "Command Your Influence",
+        "Leadership • Voice • Vision",
+        "Where Influence Begins"
+      ];
+      let t = 0;
+      setInterval(() => {
+        t = (t + 1) % taglines.length;
+        const el = document.getElementById("rotating-tagline");
+        el.style.opacity = 0;
+        setTimeout(() => {
+          el.textContent = taglines[t];
+          el.style.opacity = 1;
+        }, 300);
+      }, 4000);
+
+      // Heath quotes rotation
       const quotes = [
         "“It’s Voice Activated.”",
         "“Influence Begins With Vision.”",
         "“Faith Fuels Leadership.”",
-        "“Your Voice is the Gateway to Your Future.”",
         "“Lead with Words, Finish with Action.”",
+        "“Your Voice is the Gateway to Your Future.”",
         "“Silence is Permission — Speak with Purpose.”"
       ];
       let i = 0;
@@ -83,7 +126,10 @@
         i = (i + 1) % quotes.length;
         const q = document.getElementById("quote");
         q.style.opacity = 0;
-        setTimeout(() => { q.textContent = quotes[i]; q.style.opacity = 1; }, 250);
+        setTimeout(() => {
+          q.textContent = quotes[i];
+          q.style.opacity = 1;
+        }, 250);
       }, 4000);
     </script>
   </body>
