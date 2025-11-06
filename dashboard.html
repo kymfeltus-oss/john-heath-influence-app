@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Influence HQ 2.0 — Dashboard</title>
 
     <link
@@ -13,7 +16,7 @@
   </head>
 
   <body>
-    <!-- Fixed Sidebar -->
+    <!-- Fixed Sidebar (always visible) -->
     <aside class="sidebar">
       <div class="logo-area">
         <div class="logo-bg"></div>
@@ -33,8 +36,9 @@
 
     <!-- Main Content -->
     <main class="main-content">
-      <!-- Hero Banner -->
-      <section class="hero">
+      <!-- HERO (HTML IMG uses dashboard-hero.png) -->
+      <!-- NOTE: Save the selected John+Books banner as: dashboard-hero.png -->
+      <section class="hero" aria-label="John Heath Hero">
         <img
           src="dashboard-hero.png"
           alt="John Heath and Books"
@@ -42,10 +46,10 @@
         />
       </section>
 
-      <!-- Dashboard Modules -->
+      <!-- Modules -->
       <section class="modules">
         <div class="card">
-          <img src="book-logo.png" alt="Book Logo" class="card-logo" />
+          <img src="book-logo.png" alt="Books Mark" class="card-logo" />
           <h3>Influence Library</h3>
           <p>Books and resources that shape leaders.</p>
           <a href="books.html" class="btn">View Library</a>
@@ -83,7 +87,7 @@
       </section>
 
       <!-- Heath Quotes -->
-      <section class="quotes">
+      <section class="quotes" aria-live="polite">
         <h2>Heath Quotes</h2>
         <p id="quote">“It’s Voice Activated.”</p>
       </section>
@@ -94,7 +98,7 @@
     </main>
 
     <script>
-      // Heath Quotes Rotation
+      // Rotating Heath quotes
       const quotes = [
         "“It’s Voice Activated.”",
         "“Influence Begins With Vision.”",
