@@ -13,20 +13,30 @@
   </head>
 
   <body>
+    <!-- Full-width logo header -->
     <header class="topbar">
-      <img src="logo.png" alt="Influence HQ 2.0" class="top-logo" />
+      <img src="hq-logo.png" alt="Influence HQ 2.0" class="top-logo" />
     </header>
 
-    <main class="wrap">
+    <!-- Hero image background -->
+    <div class="hero-bg">
+      <img src="john-heath-hero.png" alt="John Heath" />
+    </div>
+
+    <main class="content">
+      <h1 class="title">Welcome to Influence HQ 2.0</h1>
+      <p class="subtitle">Leadership • Voice • Vision</p>
+
+      <!-- Module cards -->
       <section class="modules">
         <a class="card" href="books.html">
           <h3>Influence Library</h3>
-          <p>Books, guides, and exclusive insights.</p>
+          <p>Books and resources that shape leaders.</p>
         </a>
 
         <a class="card" href="consult.html">
           <h3>Coaching & Consults</h3>
-          <p>30 or 60 minutes • focused outcomes.</p>
+          <p>Book a 30 or 60 minute session for clarity and growth.</p>
         </a>
 
         <a class="card" href="contact.html">
@@ -35,25 +45,46 @@
         </a>
 
         <a class="card" href="university.html">
-          <img src="uni-logo.png" alt="Influence University" class="mini-logo" />
           <h3>Influence University</h3>
           <p>Courses, mentorship, and leadership development.</p>
         </a>
 
         <a class="card" href="consult.html#career">
           <h3>Career & Ministry Track</h3>
-          <p>Practical pathways to grow influence.</p>
+          <p>Practical pathways to expand your influence.</p>
         </a>
 
         <a class="card" href="about.html#quotes">
           <h3>Heath Quotes Hub</h3>
-          <p>Signature lines & principles that guide leaders.</p>
+          <p>Signature quotes that define leadership & vision.</p>
         </a>
       </section>
 
-      <footer class="foot">
-        © 2026 Influence HQ 2.0. All Rights Reserved.
-      </footer>
+      <!-- Heath Quotes -->
+      <section class="quotes">
+        <h2>Heath Quotes</h2>
+        <p id="quote">“It’s Voice Activated.”</p>
+      </section>
     </main>
+
+    <footer class="foot">© 2026 Influence HQ 2.0. All Rights Reserved.</footer>
+
+    <script>
+      const quotes = [
+        "“It’s Voice Activated.”",
+        "“Influence Begins With Vision.”",
+        "“Faith Fuels Leadership.”",
+        "“Your Voice is the Gateway to Your Future.”",
+        "“Lead with Words, Finish with Action.”",
+        "“Silence is Permission — Speak with Purpose.”"
+      ];
+      let i = 0;
+      setInterval(() => {
+        i = (i + 1) % quotes.length;
+        const q = document.getElementById("quote");
+        q.style.opacity = 0;
+        setTimeout(() => { q.textContent = quotes[i]; q.style.opacity = 1; }, 250);
+      }, 4000);
+    </script>
   </body>
 </html>
