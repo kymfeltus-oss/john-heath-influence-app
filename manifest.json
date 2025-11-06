@@ -3,6 +3,7 @@
   "short_name": "JH Influence",
   "description": "Pastor • Executive • Lobbyist • Mentor — Official App of John Heath",
   "start_url": "index.html",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#000000",
