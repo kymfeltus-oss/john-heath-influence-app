@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#d4af37" />
     <link rel="apple-touch-icon" href="logo.png" />
@@ -19,75 +16,71 @@
   </head>
 
   <body class="fade-in-body">
-    <nav class="navbar dark">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html" class="active">Dashboard</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="consult.html">Consult</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <header class="dash-hero">
-      <div class="dash-left">
-        <h1>Welcome to Influence HQ</h1>
-        <p>Pastor • Executive • Lobbyist • Mentor</p>
-      </div>
-      <div class="dash-right">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="profile">
         <img src="john-heath.jpg" alt="John Heath" />
+        <h2>John Heath</h2>
+        <p>Influence HQ</p>
       </div>
-    </header>
+      <nav>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">About</a>
+        <a href="consult.html">Consult</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </aside>
 
-    <main class="cards">
-      <a class="card" href="books.html">
-        <h3>Books</h3>
-        <p>Explore 2026 releases and previews.</p>
-      </a>
+    <!-- MAIN DASHBOARD -->
+    <main class="dash-main">
+      <section class="tiles">
+        <a href="books.html" class="tile">
+          <h3>Books</h3>
+          <p>Explore 2026 releases and previews.</p>
+        </a>
 
-      <a class="card" href="about.html">
-        <h3>About John</h3>
-        <p>Bio, mission, and Voice Vision Leadership.</p>
-      </a>
+        <a href="about.html" class="tile">
+          <h3>About John</h3>
+          <p>Learn more about his mission and leadership.</p>
+        </a>
 
-      <a class="card accent" href="consult.html">
-        <h3>Consultation</h3>
-        <p>Book a 30 or 60 minute session.</p>
-      </a>
+        <a href="consult.html" class="tile">
+          <h3>Consultation</h3>
+          <p>Book one-on-one coaching sessions.</p>
+        </a>
 
-      <a class="card" href="contact.html">
-        <h3>Invite to Speak</h3>
-        <p>Booking • Media • Partnerships</p>
-      </a>
+        <a href="contact.html" class="tile">
+          <h3>Invite to Speak</h3>
+          <p>Media, partnerships &amp; appearances.</p>
+        </a>
 
-      <div class="card disabled">
-        <h3>Events (Soon)</h3>
-        <p>Speaking calendar & appearances.</p>
-      </div>
+        <div class="tile disabled">
+          <h3>Events</h3>
+          <p>Speaking calendar coming soon.</p>
+        </div>
 
-      <div class="card quote">
-        <h3>Quote of the Day</h3>
-        <p id="quote">“It’s voice activated.”</p>
-      </div>
+        <div class="tile quote">
+          <h3>Heath Quotes</h3>
+          <p id="quote">“Influence begins with vision.”</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2026 John Heath Influence. All Rights Reserved.</p>
+      </footer>
     </main>
-
-    <footer class="sticky">
-      <a href="index.html">Home</a>
-      <a href="dashboard.html" class="active">Dashboard</a>
-      <a href="contact.html">Contact</a>
-    </footer>
 
     <script src="transition.js" defer></script>
     <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("service-worker.js");
-      }
-      // simple rotating quote
+      if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js");
+
+      // rotate quotes
       const quotes = [
         "It’s voice activated.",
         "Influence begins with vision.",
-        "Lead with words, finish with action."
+        "Lead with words, finish with action.",
+        "Faith fuels influence."
       ];
       let i = 0;
       setInterval(() => {
