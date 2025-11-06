@@ -2,44 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#d4af37" />
-    <link rel="apple-touch-icon" href="logo.png" />
+    <meta name="theme-color" content="#3b82f6" />
+    <link rel="apple-touch-icon" href="hq-logo.png" />
+    <title>Influence HQ 2.0</title>
 
-    <title>John Heath Influence App</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="fade-in-body">
-    <div class="app-container">
-      <img src="logo.png" alt="John Heath Logo" class="signature fade-down" />
+    <div class="hero">
+      <!-- Transparent Portrait -->
+      <img src="john-heath-hero.png" alt="John Heath" class="portrait" />
 
-      <div class="hero-section">
-        <img src="john-heath.jpg" alt="Pastor John Heath" class="portrait fade-up" />
-        <div class="cta fade-in">
-          <a href="dashboard.html" class="btn primary">Step Into Influence</a>
-        </div>
-      </div>
+      <!-- HQ 2.0 Logo -->
+      <img src="hq-logo.png" alt="Influence HQ 2.0" class="logo" />
 
-      <p class="tagline fade-in">
-        Empowering <span>Leaders</span> to Speak, Lead, and Influence with <span>Vision.</span>
-      </p>
-
-      <footer>
-        <p>© 2026 John Heath Influence. All Rights Reserved.</p>
-      </footer>
+      <!-- Call-to-Action Button -->
+      <a href="dashboard.html" class="btn primary">Step Into Influence</a>
     </div>
+
+    <footer>
+      <p>© 2026 Influence HQ 2.0. All Rights Reserved.</p>
+    </footer>
 
     <script src="transition.js" defer></script>
     <script>
-      if ("serviceWorker" in navigator) {
+      if ("serviceWorker" in navigator)
         navigator.serviceWorker.register("service-worker.js");
-      }
     </script>
   </body>
 </html>
