@@ -12,40 +12,45 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="books.css" />
+    <script src="transition.js" defer></script>
   </head>
-  <body>
+  <body class="fade-in-body">
+    <nav class="navbar dark">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html" class="active">Books</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+
     <header>
       <h1>John Heath</h1>
       <p>Pastor • Executive • Lobbyist • Mentor</p>
     </header>
 
     <section class="books-showcase">
-      <h2>Coming 2026</h2>
+      <h2 class="glow-text">Coming 2026</h2>
       <div class="books-grid">
         <div class="book-card fade-in">
           <img src="IMG_2855.png" alt="I Am The Circle" />
           <h3>I Am The Circle</h3>
           <p>Become the Influencer and Leader You Were Destined to Be</p>
         </div>
-
         <div class="book-card fade-in">
           <img src="IMG_2856.png" alt="Ecclesiastical Booty Call" />
           <h3>Ecclesiastical Booty Call</h3>
           <p>How the Church Has Become America’s Political One-Night Stand</p>
         </div>
-
         <div class="book-card fade-in">
-          <img src="IMG_2858.png" alt="G.G.Y.T" />
-          <h3>G.G.Y.T — Girl Get Yourself Together</h3>
-          <p>Achieve the Life, Love, and Success You Desire</p>
+          <img src="IMG_2858.png" alt="GGYT" />
+          <h3>G.G.Y.T – Girl Get Yourself Together</h3>
+          <p>Achieve the Life, Love and Success You Desire</p>
         </div>
-
         <div class="book-card fade-in">
           <img src="IMG_2867.png" alt="It's Voice Activated" />
-          <h3>It's Voice Activated</h3>
+          <h3>It’s Voice Activated</h3>
           <p>Creating and Framing Your World With Your Words</p>
         </div>
-
         <div class="book-card fade-in">
           <img src="IMG_2869.png" alt="The Power of the Pivot" />
           <h3>The Power of the Pivot</h3>
@@ -56,7 +61,6 @@
 
     <footer>
       <p>© 2026 John Heath Influence. All Rights Reserved.</p>
-      <a href="index.html" class="back-btn">← Back to Home</a>
     </footer>
   </body>
 </html>
