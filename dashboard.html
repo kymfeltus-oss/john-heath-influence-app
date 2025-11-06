@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Influence HQ 2.0 — Dashboard</title>
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -13,71 +12,74 @@
   </head>
 
   <body>
-    <!-- Header -->
-    <header class="topbar">
-      <img src="hq-logo.png" alt="Influence HQ 2.0" class="top-logo" />
-    </header>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo-area">
+        <img src="hq-logo.png" alt="Influence HQ 2.0" class="hq-logo" />
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html" class="active">
+          <span class="icon">🏠</span> Dashboard
+        </a>
+        <a href="books.html"><span class="icon">📚</span> Influence Library</a>
+        <a href="consult.html"><span class="icon">🎯</span> Coaching & Consults</a>
+        <a href="contact.html"><span class="icon">🎙️</span> Speaking & Media</a>
+        <a href="university.html"><span class="icon">🎓</span> Influence University</a>
+        <a href="about.html#quotes"><span class="icon">💬</span> Heath Quotes Hub</a>
+        <a href="#"><span class="icon">⚙️</span> Settings / Logout</a>
+      </nav>
+    </aside>
 
-    <!-- John Heath subtle background -->
-    <div class="hero-bg">
-      <img src="john-heath-hero.png" alt="John Heath" />
-    </div>
+    <!-- Sidebar Toggle -->
+    <button class="toggle-btn" id="toggle-btn">☰</button>
 
-    <main class="content">
-      <!-- Greeting Section -->
-      <section class="intro">
-        <h1 class="fade-greet">Welcome Back, Influencer.</h1>
-        <p class="fade-sub" id="rotating-tagline">Educate • Empower • Elevate</p>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Banner -->
+      <section class="hero">
+        <img
+          src="ChatGPT Image Nov 6, 2025, 12_35_48 PM.png"
+          alt="John Heath and Books"
+          class="hero-banner"
+        />
       </section>
 
-      <!-- Modules -->
+      <!-- Content Section -->
       <section class="modules">
-        <div class="card" id="library">
+        <div class="card">
           <h3>Influence Library</h3>
           <p>Books and resources that shape leaders.</p>
-          <div class="overlay">
-            <a href="books.html" class="mini-btn">View Library</a>
-          </div>
+          <a href="books.html" class="btn">View Library</a>
         </div>
 
-        <div class="card" id="consult">
+        <div class="card">
           <h3>Coaching & Consults</h3>
           <p>Book a 30 or 60 minute session for clarity and growth.</p>
-          <div class="overlay">
-            <a href="consult.html" class="mini-btn">Book Now</a>
-          </div>
+          <a href="consult.html" class="btn">Book Now</a>
         </div>
 
-        <div class="card" id="media">
+        <div class="card">
           <h3>Speaking & Media</h3>
           <p>Invite the voice of influence to your platform.</p>
-          <div class="overlay">
-            <a href="contact.html" class="mini-btn">Request</a>
-          </div>
+          <a href="contact.html" class="btn">Request Media</a>
         </div>
 
-        <div class="card" id="university">
+        <div class="card">
           <h3>Influence University</h3>
           <p>Courses, mentorship, and leadership development.</p>
-          <div class="overlay">
-            <a href="university.html" class="mini-btn">Explore</a>
-          </div>
+          <a href="university.html" class="btn">Explore Courses</a>
         </div>
 
-        <div class="card" id="career">
+        <div class="card">
           <h3>Career & Ministry Track</h3>
           <p>Practical pathways to grow influence.</p>
-          <div class="overlay">
-            <a href="consult.html#career" class="mini-btn">Start Now</a>
-          </div>
+          <a href="consult.html#career" class="btn">Join Track</a>
         </div>
 
-        <div class="card" id="quotes">
+        <div class="card">
           <h3>Heath Quotes Hub</h3>
           <p>Signature quotes that define leadership & vision.</p>
-          <div class="overlay">
-            <a href="about.html#quotes" class="mini-btn">View Quotes</a>
-          </div>
+          <a href="about.html#quotes" class="btn">See Quotes</a>
         </div>
       </section>
 
@@ -86,33 +88,22 @@
         <h2>Heath Quotes</h2>
         <p id="quote">“It’s Voice Activated.”</p>
       </section>
+
+      <footer class="foot">
+        © 2026 Influence HQ 2.0. All Rights Reserved.
+      </footer>
     </main>
 
-    <footer class="foot">
-      © 2026 Influence HQ 2.0. All Rights Reserved.
-    </footer>
-
-    <!-- Scripts -->
+    <!-- JS -->
     <script>
-      // Rotating subtagline
-      const taglines = [
-        "Educate • Empower • Elevate",
-        "Command Your Influence",
-        "Leadership • Voice • Vision",
-        "Where Influence Begins"
-      ];
-      let t = 0;
-      setInterval(() => {
-        t = (t + 1) % taglines.length;
-        const el = document.getElementById("rotating-tagline");
-        el.style.opacity = 0;
-        setTimeout(() => {
-          el.textContent = taglines[t];
-          el.style.opacity = 1;
-        }, 300);
-      }, 4000);
+      // Sidebar toggle
+      const toggleBtn = document.getElementById("toggle-btn");
+      const sidebar = document.getElementById("sidebar");
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
 
-      // Heath quotes rotation
+      // Quotes rotation
       const quotes = [
         "“It’s Voice Activated.”",
         "“Influence Begins With Vision.”",
@@ -129,7 +120,7 @@
         setTimeout(() => {
           q.textContent = quotes[i];
           q.style.opacity = 1;
-        }, 250);
+        }, 300);
       }, 4000);
     </script>
   </body>
