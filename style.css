@@ -15,7 +15,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(180deg, var(--light) 0%, var(--champagne) 100%);
   color: var(--navy);
-  overflow: hidden;
+  overflow-x: hidden;
   text-align: center;
 }
 
@@ -31,32 +31,31 @@ body {
   padding: 0 1rem;
 }
 
-/* Logo - positioned above Pastor Heath
-   Increased size: larger default max-width + desktop bump */
+/* Logo — dramatically larger but responsive */
 .signature {
-  width: 92%;
-  max-width: 460px;           /* was 380px — larger by default */
+  width: 100%;
+  max-width: 680px; /* increased from 460px */
   background: transparent;
   position: relative;
   z-index: 3;
-  margin-top: 1rem;
+  margin-top: 2rem; /* extra spacing from top */
   animation: fadeDown 1.6s ease forwards;
 }
 
-/* Pastor Heath */
+/* Pastor Heath portrait */
 .portrait {
-  width: 95%;
-  max-width: 440px;
+  width: 90%;
+  max-width: 420px;
   height: auto;
   border: none;
   background: transparent;
   position: relative;
   z-index: 2;
-  transform: translateY(-5%);
+  transform: translateY(-4%);
   animation: fadeUp 1.8s ease forwards;
 }
 
-/* Defined white fade */
+/* Fade overlay */
 .fade-overlay {
   position: absolute;
   bottom: 0;
@@ -141,7 +140,7 @@ footer {
   }
   to {
     opacity: 1;
-    transform: translateY(-5%);
+    transform: translateY(-4%);
   }
 }
 
@@ -157,12 +156,12 @@ footer {
   }
 }
 
-/* Mobile Tweaks */
+/* Mobile tweaks */
 @media (max-width: 480px) {
   .signature {
     width: 100%;
-    max-width: 420px;         /* keep it bold but safe on small screens */
-    margin-top: 0.5rem;
+    max-width: 520px; /* still large but mobile-safe */
+    margin-top: 1.2rem;
   }
 
   .portrait {
@@ -180,9 +179,9 @@ footer {
   }
 }
 
-/* Desktop boost — make logo even bigger on wide screens */
+/* Desktop boost */
 @media (min-width: 1024px) {
   .signature {
-    max-width: 600px;         /* extra presence on desktop */
+    max-width: 800px; /* BIG, bold desktop logo */
   }
 }
