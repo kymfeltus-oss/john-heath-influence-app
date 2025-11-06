@@ -12,32 +12,36 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="transition.js" defer></script>
   </head>
-  <body>
+  <body class="fade-in-body">
+    <nav class="navbar transparent">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+
     <div class="app-container">
-      <!-- Signature Logo -->
       <img src="logo.png" alt="John Heath Logo" class="signature fade-down" />
 
-      <!-- Main content row: Image left + Button right -->
       <div class="hero-section">
         <img
           src="john-heath.jpg"
           alt="Pastor John Heath"
           class="portrait fade-up"
         />
-
         <div class="cta fade-in">
-          <a href="books.html" class="btn primary">Step Into Influence</a>
+          <a href="books.html" class="btn primary page-link">Step Into Influence</a>
         </div>
       </div>
 
-      <!-- Tagline -->
       <p class="tagline fade-in">
         Empowering <span>Leaders</span> to Speak, Lead, and Influence with
         <span>Vision.</span>
       </p>
 
-      <!-- Footer -->
       <footer>
         <p>© 2026 John Heath Influence. All Rights Reserved.</p>
       </footer>
