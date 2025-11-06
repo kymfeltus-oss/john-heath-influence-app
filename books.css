@@ -1,0 +1,128 @@
+:root {
+  --navy: #0e1a2b;
+  --gold: #d4af37;
+  --gray: #ddd;
+  --black: #000;
+}
+
+/* === Base === */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--black);
+  color: var(--gold);
+  text-align: center;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  padding: 1.2rem 0 0.5rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+  color: var(--gold);
+}
+
+header p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-top: 0;
+}
+
+/* === Section === */
+.books-showcase {
+  flex-grow: 1;
+  padding: 0.5rem 1rem 1rem;
+}
+
+.books-showcase h2 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* === Book Grid === */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.book-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.book-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+.book-card h3 {
+  color: var(--gold);
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+.book-card p {
+  color: var(--gray);
+  font-size: 0.75rem;
+  line-height: 1.2rem;
+}
+
+/* === Footer === */
+footer {
+  background: #0e0e0e;
+  color: var(--gray);
+  padding: 0.7rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.back-btn {
+  display: block;
+  color: var(--gold);
+  text-decoration: none;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* === Animations === */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
