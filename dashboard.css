@@ -8,11 +8,7 @@
 }
 
 /* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* Base Layout */
 html, body {
@@ -27,7 +23,7 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 240px;
+  width: 230px;
   height: 100vh;
   background: var(--blue);
   color: var(--white);
@@ -39,23 +35,36 @@ html, body {
   z-index: 10;
 }
 .main-content {
-  margin-left: 240px;
+  margin-left: 230px;
   overflow-x: hidden;
 }
 
-/* Sidebar logo */
+/* Sidebar logo + backdrop */
 .logo-area {
   width: 100%;
   text-align: center;
   margin-bottom: 1.5rem;
+  position: relative;
+}
+.logo-bg {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 80px;
+  background: rgba(255,255,255,0.15);
+  filter: blur(18px);
+  border-radius: 20px;
+  z-index: 0;
 }
 .hq-logo {
+  position: relative;
+  z-index: 1;
   width: 160px;
-  max-width: 90%;
   display: block;
-  margin: 0 auto 1rem auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.9));
 }
 
 /* Sidebar menu */
@@ -68,8 +77,6 @@ html, body {
   text-decoration: none;
   color: var(--white);
   padding: 0.9rem 1.2rem;
-  display: flex;
-  align-items: center;
   font-weight: 500;
   transition: background 0.25s ease, padding-left 0.25s ease;
 }
@@ -79,23 +86,20 @@ html, body {
   padding-left: 1.6rem;
 }
 
-/* Hero banner */
+/* Hero Banner */
 .hero {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-bottom: 1px solid var(--stroke);
   background: var(--white);
 }
 .hero-banner {
   width: 100%;
-  max-height: 380px;
+  max-height: 400px;
   object-fit: cover;
   display: block;
 }
 
-/* Dashboard cards */
+/* Dashboard Cards */
 .modules {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -106,28 +110,22 @@ html, body {
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.06);
+  box-shadow: 0 4px 14px rgba(17,24,39,0.06);
   padding: 1.2rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-align: center;
 }
 .card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 10px 24px rgba(59,130,246,0.2);
   border-color: #dbeafe;
 }
 .card-logo {
   height: 40px;
   margin-bottom: 0.5rem;
 }
-.card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.4rem;
-}
-.card p {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
+.card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.card p { font-size: 0.9rem; color: var(--muted); }
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -137,14 +135,12 @@ html, body {
   border-radius: 10px;
   font-weight: 600;
   margin-top: 0.8rem;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(59,130,246,0.3);
   transition: transform 0.25s ease;
 }
-.btn:hover {
-  transform: scale(1.05);
-}
+.btn:hover { transform: scale(1.05); }
 
-/* Quotes section */
+/* Quotes Section */
 .quotes {
   text-align: center;
   margin: 1rem 0 2rem;
@@ -168,38 +164,19 @@ html, body {
   padding: 1rem 0 2rem;
 }
 
-/* ✅ Responsive Fix for Mobile */
+/* Responsive Scaling */
 @media (max-width: 1024px) {
-  .sidebar {
-    width: 200px;
-  }
-  .main-content {
-    margin-left: 200px;
-  }
-  .hq-logo {
-    width: 140px;
-  }
-  .hero-banner {
-    max-height: 300px;
-  }
+  .sidebar { width: 200px; }
+  .main-content { margin-left: 200px; }
+  .hq-logo { width: 140px; }
+  .hero-banner { max-height: 300px; }
 }
 @media (max-width: 768px) {
   .sidebar {
-    width: 100px;
+    display: none;
   }
   .main-content {
-    margin-left: 100px;
-  }
-  .hq-logo {
-    width: 90px;
-  }
-  .menu a {
-    font-size: 0;
-    text-indent: -9999px;
-  }
-  .menu a::before {
-    font-size: 1.4rem;
-    text-indent: 0;
+    margin-left: 0;
   }
   .modules {
     grid-template-columns: 1fr;
