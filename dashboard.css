@@ -1,92 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#d4af37" />
-    <link rel="apple-touch-icon" href="logo.png" />
+:root {
+  --navy:#0e1a2b;
+  --gold:#d4af37;
+  --light:#ffffff;
+  --gray:#cccccc;
+  --bg1:#10121a;
+  --bg2:#1a1d27;
+}
 
-    <title>Dashboard — John Heath Influence</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="dashboard.css" />
-  </head>
+body {
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(180deg,var(--bg1)0%,var(--bg2)100%);
+  color:var(--light);
+  display:flex;
+  height:100vh;
+  overflow:hidden;
+}
 
-  <body class="fade-in-body">
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
-      <div class="profile">
-        <img src="john-heath.jpg" alt="John Heath" />
-        <h2>John Heath</h2>
-        <p>Influence HQ</p>
-      </div>
-      <nav>
-        <a href="dashboard.html" class="active">Dashboard</a>
-        <a href="books.html">Books</a>
-        <a href="about.html">About</a>
-        <a href="consult.html">Consult</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </aside>
+/* Sidebar */
+.sidebar {
+  width:230px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(8px);
+  border-right:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:1rem 0;
+}
+.profile img{
+  width:90px;height:90px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--gold);box-shadow:0 0 10px rgba(212,175,55,.3);
+}
+.profile h2{margin:.5rem 0 0;font-size:1.1rem;color:var(--gold);}
+.profile p{margin:.2rem 0 .8rem 0;color:var(--gray);font-size:.85rem;}
+.sidebar nav{
+  display:flex;flex-direction:column;align-items:flex-start;width:100%;padding-left:1.2rem;
+}
+.sidebar nav a{
+  text-decoration:none;color:var(--light);padding:.6rem 0;width:100%;
+  transition:.3s;font-weight:500;
+}
+.sidebar nav a:hover,.sidebar nav a.active{
+  color:var(--gold);
+  transform:translateX(4px);
+}
 
-    <!-- MAIN DASHBOARD -->
-    <main class="dash-main">
-      <section class="tiles">
-        <a href="books.html" class="tile">
-          <h3>Books</h3>
-          <p>Explore 2026 releases and previews.</p>
-        </a>
+/* Main Area */
+.dash-main {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+}
 
-        <a href="about.html" class="tile">
-          <h3>About John</h3>
-          <p>Learn more about his mission and leadership.</p>
-        </a>
+/* Tile Grid */
+.tiles {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+  padding:2rem;
+  align-content:center;
+  justify-items:center;
+  flex:1;
+}
+.tile {
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:1rem;
+  text-align:left;
+  width:100%;
+  max-width:240px;
+  height:150px;
+  color:var(--light);
+  text-decoration:none;
+  transition:.25s;
+}
+.tile h3{margin:.2rem 0 .4rem 0;color:var(--gold);}
+.tile p{margin:0;font-size:.9rem;color:var(--gray);}
+.tile:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 18px rgba(212,175,55,.35);
+}
+.tile.disabled{
+  opacity:.5;
+  pointer-events:none;
+}
+.tile.quote{
+  background:rgba(255,255,255,0.12);
+  border-color:rgba(212,175,55,0.3);
+  display:flex;flex-direction:column;justify-content:center;
+  text-align:center;
+}
 
-        <a href="consult.html" class="tile">
-          <h3>Consultation</h3>
-          <p>Book one-on-one coaching sessions.</p>
-        </a>
+/* Footer */
+footer {
+  background:rgba(255,255,255,0.04);
+  text-align:center;
+  color:var(--gray);
+  font-size:.8rem;
+  padding:.6rem;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
 
-        <a href="contact.html" class="tile">
-          <h3>Invite to Speak</h3>
-          <p>Media, partnerships &amp; appearances.</p>
-        </a>
-
-        <div class="tile disabled">
-          <h3>Events</h3>
-          <p>Speaking calendar coming soon.</p>
-        </div>
-
-        <div class="tile quote">
-          <h3>Heath Quotes</h3>
-          <p id="quote">“Influence begins with vision.”</p>
-        </div>
-      </section>
-
-      <footer>
-        <p>© 2026 John Heath Influence. All Rights Reserved.</p>
-      </footer>
-    </main>
-
-    <script src="transition.js" defer></script>
-    <script>
-      if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js");
-
-      // rotate quotes
-      const quotes = [
-        "It’s voice activated.",
-        "Influence begins with vision.",
-        "Lead with words, finish with action.",
-        "Faith fuels influence."
-      ];
-      let i = 0;
-      setInterval(() => {
-        i = (i + 1) % quotes.length;
-        document.getElementById("quote").textContent = quotes[i];
-      }, 4000);
-    </script>
-  </body>
-</html>
+/* Responsive Fit: keeps all on one screen */
+@media (max-width:768px){
+  .sidebar{width:180px;}
+  .tiles{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));padding:1rem;}
+  .tile{max-width:200px;height:130px;}
+}
+@media (max-width:540px){
+  body{flex-direction:column;}
+  .sidebar{flex-direction:row;width:100%;height:auto;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}
+  .sidebar nav{flex-direction:row;justify-content:space-around;padding:0;width:100%;}
+  .tiles{grid-template-columns:repeat(2,1fr);}
+}
