@@ -10,8 +10,9 @@ body{
   margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--white); background:linear-gradient(180deg,var(--bg1),var(--bg2));
 }
+.fade-in-body{animation:fadeIn .5s ease forwards}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-/* hero */
 .uni-hero{
   position:relative; display:flex; align-items:center; justify-content:space-between;
   padding:1.2rem 1.4rem; height:22vh;
@@ -22,13 +23,16 @@ body{
   animation:float 14s ease-in-out infinite alternate;
 }
 @keyframes float{0%{filter:saturate(100%)}100%{filter:saturate(120%)}}
-.uni-logo{margin:0; font-size:1.6rem; font-weight:600}
+
+.uni-head{display:flex; align-items:center; gap:.8rem}
+.uni-logo{height:40px; filter:drop-shadow(0 10px 16px rgba(59,130,246,.25))}
+.uni-text h1{margin:0; font-size:1.5rem; font-weight:600}
 .uni-tag{margin:.2rem 0 0; color:var(--muted)}
+
 .btn{display:inline-block; padding:.7rem 1rem; border-radius:10px; text-decoration:none; font-weight:600}
 .btn.ghost{border:1px solid var(--stroke); color:var(--white)}
 .btn.ghost:hover{border-color:rgba(59,130,246,.5); color:var(--blue2)}
 
-/* resource grid */
 .grid{
   padding:0 1.4rem; display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;
 }
@@ -49,7 +53,6 @@ body{
 .btn.primary:hover{filter:brightness(1.05)}
 .btn.ghost{border:1px solid var(--stroke); color:var(--white)}
 
-/* programs */
 .programs{padding:1.2rem 1.4rem}
 .programs h2{margin:.2rem 0 .8rem}
 .prog-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem}
@@ -58,7 +61,6 @@ body{
 .prog p{margin:0; color:var(--muted)}
 .link{text-decoration:none; color:var(--blue2); font-weight:600}
 
-/* quote */
 .uni-quote{
   margin:1rem 1.4rem; height:40px; border:1px solid var(--stroke); border-radius:12px;
   background:var(--panel); display:flex; align-items:center; gap:.8rem; padding:0 .9rem;
@@ -66,10 +68,8 @@ body{
 .uni-quote .tag{color:var(--blue); font-weight:600}
 #uquote{transition:opacity .22s ease}
 
-/* footer */
 .foot{text-align:center; color:var(--muted); font-size:.8rem; padding:.8rem 0}
 
-/* responsive */
 @media(max-width:1000px){
   .grid{grid-template-columns:repeat(2,1fr)}
   .prog-grid{grid-template-columns:repeat(2,1fr)}
