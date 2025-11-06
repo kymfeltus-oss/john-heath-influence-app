@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#d4af37" />
     <link rel="apple-touch-icon" href="logo.png" />
@@ -19,17 +16,6 @@
   </head>
 
   <body class="fade-in-body">
-    <nav class="navbar transparent">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="consult.html">Consult</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
     <div class="app-container">
       <img src="logo.png" alt="John Heath Logo" class="signature fade-down" />
 
@@ -41,8 +27,7 @@
       </div>
 
       <p class="tagline fade-in">
-        Empowering <span>Leaders</span> to Speak, Lead, and Influence with
-        <span>Vision.</span>
+        Empowering <span>Leaders</span> to Speak, Lead, and Influence with <span>Vision.</span>
       </p>
 
       <footer>
@@ -53,10 +38,7 @@
     <script src="transition.js" defer></script>
     <script>
       if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("service-worker.js")
-          .then(() => console.log("✅ Service Worker Registered"))
-          .catch(err => console.error("Service Worker registration failed:", err));
+        navigator.serviceWorker.register("service-worker.js");
       }
     </script>
   </body>
