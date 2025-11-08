@@ -81,4 +81,36 @@ footer {
   .portrait { width: 340px; opacity: 0.25; }
   .logo { width: 280px; }
   .btn { font-size: 1.7rem; padding: 0.7rem 2.2rem; }
+} /* 🔹 Background Video Hero Styling */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  object-fit: cover;
+  opacity: 0.35; /* soft overlay transparency */
+  pointer-events: none; /* allow clicks on logo/button */
 }
+
+/* Ensure layers stack correctly */
+.portrait, .logo, .btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional stronger white fade if text overlaps video */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.9) 90%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
